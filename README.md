@@ -23,3 +23,5 @@ vocal analyse
 analyse of all detections
 
 improve speed of the program
+
+establish ratio of detection
