@@ -1,4 +1,6 @@
-# SYNERGO
+# SYNERGO (project for job)
+
+
 site web, computer vision, deep learning
 
 requirement
