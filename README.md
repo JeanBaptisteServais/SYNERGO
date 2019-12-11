@@ -6,8 +6,6 @@ We searching to find a hand model skelettor for define the signification of the 
 
 <h1>Done</h1>
 
-DONE
-
 face estimation, eye detection and their positions, angle of head, hand detection.
 
 
