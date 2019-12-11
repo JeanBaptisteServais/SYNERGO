@@ -17,3 +17,9 @@ Web site
 Finish to detect part of the body
 
 implement emotion of model, calculus points of face and give a signification
+
+vocal analyse
+
+analyse of all detections
+
+improve speed of the program
