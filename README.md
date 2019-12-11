@@ -1,6 +1,6 @@
 # SYNERGO (In course)
 
-<h1>Now</h1>
+<h1>In course. </h1>
 
 We searching to find a hand model skelettor for define the signification of the gesture.
 
@@ -9,9 +9,6 @@ We searching to find a hand model skelettor for define the signification of the 
 face estimation, eye detection and their positions, angle of head, hand detection.
 
 
-<h1>In course. </h1>
-
-Implementing hand estimation.
 
 <h1>TO DO</h1>
 
