@@ -1,24 +1,21 @@
 # SYNERGO (In course)
 
+<h1>Now</h1>
+
 We searching to find a hand model skelettor for define the signification of the gesture.
 
-
-site web, computer vision, deep learning
-
-requirement
-
-comming
+<h1>Done</h1>
 
 DONE
 
 face estimation, eye detection and their positions, angle of head, hand detection.
 
 
-In course. 
+<h1>In course. </h1>
 
 Implementing hand estimation.
 
-TO DO
+<h1>TO DO</h1>
 
 Web site
 
