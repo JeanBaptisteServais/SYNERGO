@@ -1,5 +1,7 @@
 # SYNERGO (In course)
 
+![aa](https://user-images.githubusercontent.com/54853371/71028191-20fd8b00-210d-11ea-90fd-2ef5c299e2af.png)
+
 <h1>In course. </h1>
 
 We searching to find a hand model skelettor for define the signification of the gesture.
