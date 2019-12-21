@@ -10,7 +10,8 @@ have the periphery of the eyes in a rectangle (inside eyes = black, exterior = w
 then we collect the points of the eyes to recover the rectangle
 that surrounds the eyes we do a color equalization for the pupil (who's more black and inside light reflection there are
 2 technics one is this, second is by anatomic pupil, i let u search the second who's more precise, we search
-the dark intensity and his ray for define the circle of pupil ect ect)
+the dark intensity and his ray for define the circle of pupil by convolution and by gradient and by smoothing
+can't understand it)
 
 
 we superpose the periphery and the rectangle,
