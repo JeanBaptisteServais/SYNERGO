@@ -5,7 +5,7 @@ we resize the frame for speed and recover grayscale for face detection from dlib
 we define the eyes; by the points of dlib we recover
 
 the convex points and transform them into points numpy in matrix for only
-have the periphery of the eyes in a rectangle (inside eyes = white, exterior = white)
+have the periphery of the eyes in a rectangle (inside eyes = black, exterior = white)
 
 then we collect the points of the eyes to recover the rectangle
 that surrounds the eyes we do a color equalization
