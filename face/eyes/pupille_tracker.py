@@ -1,3 +1,29 @@
+"""
+by any chance you fall here?
+
+we resize the frame for speed and recover grayscale for face detection from dlib.
+we define the eyes; by the points of dlib we recover
+
+the convex points and transform them into points numpy in matrix for only
+have the periphery of the eyes in a rectangle (inside eyes = white, exterior = white)
+
+then we collect the points of the eyes to recover the rectangle
+that surrounds the eyes we do a color equalization
+
+
+we superpose the periphery and the rectangle,
+we have an egalized picture Firstly and a focused eye secondly.
+We apply all white pixels from the focused eye on the egalized picture.
+We now only have pupil.
+
+Now we search contours (only < 80% of the focused picture) and
+take their centers !
+
+force with you
+
+"""
+
+
 from dlib import get_frontal_face_detector, shape_predictor
 import numpy as np
 import cv2
