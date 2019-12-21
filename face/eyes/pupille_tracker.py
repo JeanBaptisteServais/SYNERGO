@@ -1,5 +1,5 @@
 """
-by any chance you fall here?
+by any chance you fall here? (i dowload all github eyes traking section...)
 
 we resize the frame for speed and recover grayscale for face detection from dlib.
 we define the eyes; by the points of dlib we recover
