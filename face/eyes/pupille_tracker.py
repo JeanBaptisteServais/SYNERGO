@@ -8,7 +8,7 @@ the convex points and transform them into points numpy in matrix for only
 have the periphery of the eyes in a rectangle (inside eyes = black, exterior = white)
 
 then we collect the points of the eyes to recover the rectangle
-that surrounds the eyes we do a color equalization
+that surrounds the eyes we do a color equalization for the pupil (who's more black)
 
 
 we superpose the periphery and the rectangle,
