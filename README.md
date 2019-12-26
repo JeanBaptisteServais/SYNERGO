@@ -30,3 +30,5 @@ l'autre mec d'opencv/dlib
 pascal
 
 le mec avec avec histo en python v2
+
+le model emotion de la figure
