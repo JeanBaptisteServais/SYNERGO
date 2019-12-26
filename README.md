@@ -5,9 +5,11 @@
 
 https://synergo2.herokuapp.com/
 
+
+
 statut doesn't work because all files are on my desk,
 
-statut need repository with video_capture for blinkin eyes tracking (because i thing it's ok and could be re use by other !)
+statut need repository with video_capture for blinking eyes and eyes tracking (because i thing it's <strong>ok</strong> and could be re use by other !)
 
 
 
