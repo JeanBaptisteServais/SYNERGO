@@ -15,3 +15,12 @@ statut need repository with video_capture for blinking eyes and eyes tracking (b
 
 
 
+to quote and refound tuto:
+
+pyimage
+
+l'autre mec d'opencv/dlib
+
+pascal
+
+le mec avec avec histo en python v2
