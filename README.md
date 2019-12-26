@@ -5,7 +5,7 @@
 
 https://synergo2.herokuapp.com/
 
-
+For an optimal detection we need to passed the video into video_treatment.py. Indeed base on a statistic algorithmy, we need to found the dimensions in adequation with our mesures
 
 statut doesn't work because all files are on my desk,
 
