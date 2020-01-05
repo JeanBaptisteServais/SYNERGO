@@ -4,7 +4,7 @@
 
 Hi i'm jb... ect
 
-d'ont be strict with notation and maths technic, i'm beginner, i repeated it 3/4 times and this is just begening my third years as a glasses man
+d'ont be strict with notation and maths technic, i'm beginner, i repeated it 3/4 times; and i begening my third years as a glasses man
 
 
 https://synergo2.herokuapp.com/
