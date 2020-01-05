@@ -5,30 +5,18 @@
 
 https://synergo2.herokuapp.com/
 
-For an optimal detection we need to passed the video into video_treatment.py. Indeed base on a statistic algorithmy, we need to found the dimensions in adequation with our mesures
+<h1>Head</h1>
 
-statut doesn't work because all files are on my desk,
+<h1>Eyes</h1>
 
-statut need repository with video_capture for blinking eyes and eyes tracking (because i thing it's <strong>ok</strong> and could be re use by other !)
+<h1>Face</h1>
 
+<h1>Exterior Head</h1>
 
+<h1>Hand</h1>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<h1>Talk</h1>
 
-to quote and refound tuto:
+<h1>Voice</h1>
 
-pyimage
-
-l'autre mec d'opencv/dlib
-
-pascal
-
-le mec avec avec histo en python v2
-
-le model emotion de la figure
+<h1>Secret algo</h1>
