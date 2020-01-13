@@ -11,6 +11,15 @@ Later: Mobile : register in real time video with my smarthphone, download it and
 
 Quote analysis's just an exercice for show my qualities as web developper and my knowlegeds in differents libraries and my begenning with deep learning <strong>frameworks</strong>.
 
+
+In case, there are my work from other work this is my 2 branches :
+
+https://github.com/pastrouveedespeudo; 
+
+https://github.com/LeGrosLezard/S-Y-N-E-R-G-O
+
+post scirptum : i've alot to lean
+
 ![aa](https://user-images.githubusercontent.com/54853371/71028191-20fd8b00-210d-11ea-90fd-2ef5c299e2af.png)
 
 Hi i'm Jean Baptiste... ect
