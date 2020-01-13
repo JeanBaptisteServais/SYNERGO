@@ -8,9 +8,12 @@ web site for video analysis, we are curently writting the code for hand detectio
 Hi i'm Jean Baptiste... ect
 
 
-
+<h1>Web Site Part</h1>
 
 https://synergo2.herokuapp.com/
+
+
+
 
 <h1>Head</h1>
 
