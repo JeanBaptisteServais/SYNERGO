@@ -4,7 +4,7 @@
 
 <strong>In this web site i can: </strong> create my account, have acces to video analysis, make an analysis of my video (download it, wait 1-2 hours) and watch it ! Save my video, publish it on social media ...
 
-<strong>In this web site i can: </strong> read the blog with jb technics
+<strong>In this web site i can: </strong> read the blog with jb approach (part for explain the code if we want)
 
 <strong>Later: Mobile :</strong> register in real time video with my smarthphone, download it and have acces to the analysis (1-2 hours later).
 
