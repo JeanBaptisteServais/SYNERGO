@@ -18,7 +18,7 @@ https://github.com/pastrouveedespeudo;  -> acces web site
 
 https://github.com/LeGrosLezard/S-Y-N-E-R-G-O -> acces "computer vision"
 
-post scirptum : i've alot to lean
+</strong> post scirptum : i've alot to lean</strong> 
 
 ![aa](https://user-images.githubusercontent.com/54853371/71028191-20fd8b00-210d-11ea-90fd-2ef5c299e2af.png)
 
