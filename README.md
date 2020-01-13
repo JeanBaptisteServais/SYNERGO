@@ -7,7 +7,7 @@ web site for video analysis, we are curently writting the code for hand detectio
 
 Hi i'm Jean Baptiste... ect
 
-d'ont be strict with notation and maths technic, i'm beginner, i repeated it 3/4 times; and i begening my third years as a glasses man
+
 
 
 https://synergo2.herokuapp.com/
