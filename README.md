@@ -7,7 +7,7 @@ In this web site i can: create my account, have acces to video analysis, make an
 Later: Mobile : register in real time video with my smarthphone, download it and have acces to the analysis.
 
 
-Quote analysis's just an exercice for show my qualities as web developper and my knowlegeds in differents libraries and my begenning with deep learning frameworks.
+Quote analysis's just an exercice for show my qualities as web developper and my knowlegeds in differents libraries and my begenning with deep learning <strong>frameworks</strong>.
 
 ![aa](https://user-images.githubusercontent.com/54853371/71028191-20fd8b00-210d-11ea-90fd-2ef5c299e2af.png)
 
