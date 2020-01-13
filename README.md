@@ -1,12 +1,12 @@
 # SYNERGO (In course)
 
-web site for behavior video analysis, we are curently writting the code for hand detection. The part of the web site, our speciality and the UML analysis's progress. The current code is not finish. We writting it on an another branch (another github)
+<strong>web site for behavior video analysis</strong> , we are curently writting the code for hand detection. The part of the web site, our speciality and the UML analysis's progress. The current code is not finish. We writting it on an another branch (another github)
 
-In this web site i can: create my account, have acces to video analysis, make an analysis of my video (download it, wait 1-2 hours) and watch it ! Save my video, publish it on social media ...
+<strong>In this web site i can: </strong> create my account, have acces to video analysis, make an analysis of my video (download it, wait 1-2 hours) and watch it ! Save my video, publish it on social media ...
 
-In this web site i can: read the blog with jb technics
+<strong>In this web site i can: </strong> read the blog with jb technics
 
-Later: Mobile : register in real time video with my smarthphone, download it and have acces to the analysis (1-2 hours later).
+<strong>Later: Mobile :</strong> register in real time video with my smarthphone, download it and have acces to the analysis (1-2 hours later).
 
 
 Quote analysis's just an exercice for show my qualities as web developper and my knowlegeds in differents libraries and my begenning with deep learning <strong>frameworks</strong>.
