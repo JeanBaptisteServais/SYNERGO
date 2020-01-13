@@ -14,7 +14,7 @@ Quote analysis's just an exercice for show my qualities as web developper and my
 
 In case, there are my work <strong>from other work</strong> this is my 2 branches :
 
-https://github.com/pastrouveedespeudo;  -> acces web site (my first branch was deleted we don't know why ^^)
+https://github.com/pastrouveedespeudo;  -> acces web site
 
 https://github.com/LeGrosLezard/S-Y-N-E-R-G-O -> acces "computer vision"
 
