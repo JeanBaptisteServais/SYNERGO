@@ -10,20 +10,28 @@ Hi i'm Jean Baptiste... ect
 
 <h1>Web Site Part</h1>
 
-https://synergo2.herokuapp.com/
+https://synergo2.herokuapp.com/ In progress
 
 
 
 
 <h1>Head</h1>
 
+  Finish
+
 <h1>Eyes</h1>
+  
+  Finish
 
 <h1>Face</h1>
+
+  Finish
 
 <h1>Exterior Head</h1>
 
 <h1>Hand</h1>
+
+  In course
 
 <h1>Talk</h1>
 
