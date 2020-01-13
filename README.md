@@ -13,6 +13,7 @@ Hi i'm Jean Baptiste... ect
 https://synergo2.herokuapp.com/ In progress
 
 
+Finish = Doc and verify to apply
 
 
 <h1>Head</h1>
