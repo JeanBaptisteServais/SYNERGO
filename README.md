@@ -4,6 +4,8 @@ web site for behavior video analysis, we are curently writting the code for hand
 
 In this web site i can: create my account, have acces to video analysis, make an analysis of my video (download it, wait 1-2 hours) and watch it !
 
+In this web site i can: read the blog with jb technics
+
 Later: Mobile : register in real time video with my smarthphone, download it and have acces to the analysis.
 
 
