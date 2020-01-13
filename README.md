@@ -12,7 +12,7 @@ Later: Mobile : register in real time video with my smarthphone, download it and
 Quote analysis's just an exercice for show my qualities as web developper and my knowlegeds in differents libraries and my begenning with deep learning <strong>frameworks</strong>.
 
 
-In case, there are my work from other work this is my 2 branches :
+In case, there are my work <strong>from other work</strong> this is my 2 branches :
 
 https://github.com/pastrouveedespeudo; 
 
