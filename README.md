@@ -1,7 +1,13 @@
 # SYNERGO (In course)
 
-web site for video analysis, we are curently writting the code for hand detection. The part of the web site, our speciality and the UML analysis's progress. The current code is not finish. We writting it on an another branch (another github)
+web site for behavior video analysis, we are curently writting the code for hand detection. The part of the web site, our speciality and the UML analysis's progress. The current code is not finish. We writting it on an another branch (another github)
 
+In this web site i can: create my account, have acces to video analysis, make an analysis of my video
+
+Later: Mobile : register in real time video with my smarthphone, download it and have acces to the analysis.
+
+
+Quote analysis's just an exercice for show my qualities as web developper.
 
 ![aa](https://user-images.githubusercontent.com/54853371/71028191-20fd8b00-210d-11ea-90fd-2ef5c299e2af.png)
 
