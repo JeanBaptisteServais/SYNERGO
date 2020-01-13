@@ -5,7 +5,7 @@ web site for video analysis, we are curently writting the code for hand detectio
 
 ![aa](https://user-images.githubusercontent.com/54853371/71028191-20fd8b00-210d-11ea-90fd-2ef5c299e2af.png)
 
-Hi i'm jb... ect
+Hi i'm Jean Baptiste... ect
 
 d'ont be strict with notation and maths technic, i'm beginner, i repeated it 3/4 times; and i begening my third years as a glasses man
 
