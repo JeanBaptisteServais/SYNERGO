@@ -46,3 +46,12 @@ def head_points(gray_frame, predictor, detector):
         out = landmarks, head_box
 
     return out
+
+def eyes_points_for_head_analysis(landmarks):
+
+    right_eye = landmarks.part(36).x, landmarks.part(36).y
+    left_eye = landmarks.part(45).x, landmarks.part(45).y
+    nose = landmarks.part(30).x, landmarks.part(30).y
+
+    return right_eye, left_eye, nose
+
