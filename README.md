@@ -54,6 +54,10 @@ In course = writting code
 
   - <h2>Hand detection</h2>
   
+  hand detection by:
+  
+  skeletton by: 
+  
   - <h2>Hand mask</h2>
   
   - <h2>no_finger_found</h2>
