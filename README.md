@@ -54,9 +54,9 @@ In course = writting code
 
   - <h2>Hand detection</h2>
   
-  hand detection by:
+  model hand detection by:
   
-  skeletton by: 
+  model skeletton by: 
   
   - <h2>Hand mask</h2>
   
