@@ -48,7 +48,10 @@ In course = writting code
 
 <h1>Hand</h1>
 
-
+  - <h2>Our example</h2>
+   
+    
+    
   - <h2>Hand detection</h2>
   
   model hand detection by:
