@@ -3,6 +3,23 @@ from scipy.spatial import distance as dist
 
 
 
+
+def printing(rectangle, thumb, fingers, direction, axis):
+
+    print("")
+    print("IDENTIFY FINGERS")
+
+    #Ratio aspect
+    print("Box de la main est de: ", rectangle)
+    #Need the thumb for detect the next first finger
+    print(thumb)
+    #Our finger's
+    print(fingers)
+    #Direction for the location for the next first finger
+    print(direction, axis)
+
+
+
 def draw_line_pts(copy, text, pts1, pts2):
     """Draw line and put text"""
 
@@ -33,7 +50,8 @@ def ratio_choice(direction):
 
 
 
-def thumb_to_next_finger(points, thumb, fing, copy):
+def thumb_to_next_finger(fingers, thumb, finger_annotation,
+                         copy, rectangle_w, rectangle_h, area_for_ratio):
     """Sometimes no detection of index, so we need to identify by distance
     the next finger"""
 
@@ -41,53 +59,76 @@ def thumb_to_next_finger(points, thumb, fing, copy):
     draw_line_pts(copy, "P", thumb[0][-1], thumb[0][-1])
 
     #Identify distance beetween first and thumb point
-    thumb_index = dist.euclidean(points[0], thumb[0][-1])
-    print(thumb_index, (w,h))
+    thumb_index = dist.euclidean(fingers[0], thumb[0][-1])
+    print(thumb_index, (rectangle_w, rectangle_h))
 
 
     #Index
-    if area == "width" and thumb_index < w * 0.574 or\
-       area == "height" and thumb_index < w * 0.574:
-        draw_line_pts(copy, fing[0],thumb[0][-1], points[0])
-        removing(1, fing)
+    if area_for_ratio == "width" and thumb_index < rectangle_w * 0.574 or\
+       area_for_ratio == "height" and thumb_index < rectangle_w * 0.574:
+        draw_line_pts(copy, finger_annotation[0], thumb[0][-1], fingers[0])
+        removing(1, finger_annotation)
 
     #Major
-    elif area == "width" and w * 0.775 > thumb_index > w * 0.574 or\
-         area == "height" and w * 0.775 > thumb_index > w * 0.574:
-        draw_line_pts(copy, fing[1], thumb[0][-1], points[0])
-        removing(2, fing)
+    elif area_for_ratio == "width" and rectangle_w * 0.775 > thumb_index > rectangle_w * 0.574 or\
+         area_for_ratio == "height" and rectangle_w * 0.775 > thumb_index > rectangle_w * 0.574:
+        draw_line_pts(copy, finger_annotation[1], thumb[0][-1], fingers[0])
+        removing(2, finger_annotation)
 
     #Auricular
     elif 130 > thumb_index > 105:
-        draw_line_pts(copy, fing[2], thumb[0][-1], points[0])
-        removing(3, fing)
+        draw_line_pts(copy, finger_annotation[2], thumb[0][-1], fingers[0])
+        removing(3, finger_annotation)
 
     #Annular
     elif thumb_index > 130:
-        draw_line_pts(copy, fing[3], thumb[0][-1], points[0])
-        removing(4, fing)
+        draw_line_pts(copy, finger_annotation[3], thumb[0][-1], fingers[0])
+        removing(4, finger_annotation)
 
 
     cv2.imshow("thumb_next_finger", copy)
     cv2.waitKey(0)
       
 
-def printing(rectangle, thumb, fingers, direction, axis):
 
+def fingers_distance(distance, rectangle_w, rectangle_h,
+                     area_for_ratio, finger_annotation, fingers, copy, i):
+
+    #One point after
+    if distance < rectangle_w * 0.295 and area_for_ratio == "width" or\
+       distance < rectangle_w * 0.295 and area_for_ratio == "height":
+        print("Moins 35")
+        draw_line_pts(copy, finger_annotation[0], fingers[i], fingers[i + 1])
+        removing(1, finger_annotation)
+
+    elif len(finger_annotation) == 1:
+        print("reste plus qu'un doigt")
+        draw_line_pts(copy, finger_annotation[0], fingers[i], fingers[i + 1])
+        removing(1, finger_annotation)
+
+    elif (rectangle_w * 0.295) * 2 > distance > rectangle_w * 0.295:
+        print("1 doigt apres")
+        draw_line_pts(copy, finger_annotation[1], fingers[i], fingers[i + 1])
+        removing(2, finger_annotation)
+
+    elif (rectangle_w * 0.295) * 3 > distance > (rectangle_w * 0.295) * 2:
+        print("2 doigts apres")
+        draw_line_pts(copy, finger_annotation[2], fingers[i], fingers[i + 1])
+        removing(3, finger_annotation)
+
+    elif (rectangle_w * 0.295) * 4 > distance > (rectangle_w * 0.295) * 3:
+        print("3 doigts apres")
+        draw_line_pts(copy, finger_annotation[3], fingers[i], fingers[i + 1])
+        removing(4, finger_annotation)
+
+    elif distance > (rectangle_w * 0.295) * 4:
+        print("ici ecart supp a * 4")
+
+
+
+    cv2.imshow("thumb_next_finger", copy)
+    cv2.waitKey(0)
     print("")
-    print("IDENTIFY FINGERS")
-
-    #Ratio aspect
-    print("Box de la main est de: ", rectangle)
-    #Need the thumb for detect the next first finger
-    print(thumb)
-    #Our finger's
-    print(fingers)
-    #Direction for the location for the next first finger
-    print(direction, axis)
-
-
-
 
 def identify_fingers(thumb, fingers, crop, rectangle, direction, axis):
 
@@ -95,70 +136,38 @@ def identify_fingers(thumb, fingers, crop, rectangle, direction, axis):
     printing(rectangle, thumb, fingers, direction, axis)
 
     copy = crop.copy()
-    fing = ["I", "M", "An", "a"]
-    x, y, w, h = rectangle
+    finger_annotation = ["I", "M", "An", "a"]
 
+    _, _, rectangle_w, rectangle_h = rectangle
 
     #Add None then replace by ()
     fingers += [None for i in range(4 - len(fingers))]
-    points = [(lambda x: () if x == None else x[0][-1])(i) for i in fingers]
+    fingers = [(lambda x: () if x == None else x[0][-1])(i) for i in fingers]
 
     #Choice area in function of hand position
-    area = ratio_choice(direction)
+    area_for_ratio = ratio_choice(direction)
 
     #Identify finger after the thumb
-    thumb_to_next_finger(points, thumb, fing, copy)
+    thumb_to_next_finger(fingers, thumb, finger_annotation, copy,
+                         rectangle_w, rectangle_h, area_for_ratio)
 
     #For us
-    releve_data_thumb_fingers(points, thumb)
+    releve_data_thumb_fingers(fingers, thumb)
 
 
-    for i in range(len(points)):
-        print("\n", fing)
+    for i in range(len(fingers)):
+        print("\n", finger_annotation)
 
-        if i < len(points) - 1 and points[i] != () and points[i + 1] != ():
+        if i < len(fingers) - 1 and fingers[i] != () and fingers[i + 1] != ():
 
-            distance = dist.euclidean(points[i], points[i + 1])
-            print(a, (w, h))
+            distance = dist.euclidean(fingers[i], fingers[i + 1])
+            print(distance, (rectangle_w, rectangle_h))
 
-            #One point after
-            if distance < w * 0.295 and area == "width" or\
-               distance < w * 0.295 and area == "height":
-                print("Moins 35")
-                draw_line_pts(copy, fing[0], points[i], points[i + 1])
-                removing(1, fing)
-
-            elif len(fing) == 1:
-                print("reste plus qu'un doigt")
-                draw_line_pts(copy, fing[0], points[i], points[i + 1])
-                removing(1, fing)
-
-            elif (w * 0.295) * 2 > distance > w * 0.295:
-                print("1 doigt apres")
-                draw_line_pts(copy, fing[1], points[i], points[i + 1])
-                removing(2, fing)
-
-            elif (w * 0.295) * 3 > distance > (w * 0.295) * 2:
-                print("2 doigts apres")
-                draw_line_pts(copy, fing[2], points[i], points[i + 1])
-                removing(3, fing)
-
-            elif (w * 0.295) * 4 > distance > (w * 0.295) * 3:
-                print("3 doigts apres")
-                draw_line_pts(copy, fing[3], points[i], points[i + 1])
-                removing(4, fing)
-
-            elif distance > (w * 0.295) * 4:
-                print("ici ecart supp a * 4")
+            fingers_distance(distance, rectangle_w, rectangle_h,
+                             area_for_ratio, finger_annotation, fingers, copy, i)
 
 
-
-            cv2.imshow("thumb_next_finger", copy)
-            cv2.waitKey(0)
-            print("")
-
-
-    if len(fing) > 0: print("manque des doigts :", fing)
-
+    if len(finger_annotation) > 0: print("manque des doigts :", finger_annotation)
+        
 
 
