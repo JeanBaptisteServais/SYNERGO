@@ -27,14 +27,20 @@ In course = writting code
 
   Finish
 
+  Requirements: (pip install -r requirements_head.txt)
+
 <h1>Eyes</h1>
   
   Finish
-
+  Requirements: (pip install -r requirements_eyes.txt)
+  
+  
 <h1>Face</h1>
 
   Finish
-
+  Requirements: (pip install -r requirements_face.txt)
+  
+  
 <h1>Exterior Head</h1>
 
 
@@ -100,9 +106,9 @@ t = thumb; i = index; w, h = width, height of the contour; F = finger; x = finge
   - <h2>Identifiy fingers</h2>
 
 
+  Requirements: (pip install -r requirements_hand.txt)
 
-
-
+  to download :
 
 
 
