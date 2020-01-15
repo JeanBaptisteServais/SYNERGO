@@ -23,7 +23,7 @@ https://github.com/LeGrosLezard/S-Y-N-E-R-G-O -> acces "computer vision"
 
 Hi i'm Jean Baptiste i try to find the job of my dream hum hum i try to be to be hired somewhere, in waiting i take for the most of time, sometimes pleasure ! 
 
-For use this program write openpose on the search of github, clone it, make a Cmake installation, download model (automaticly with the program or manually in click the white program in program/python and run the tutorial !)
+For use this program write openpose on the search of github, clone it, make a Cmake installation (i fail here...), download model (automaticly with the program or manually in click the white program in program/python and run the tutorial !)
 
 
 <h1>Web Site Part</h1>
