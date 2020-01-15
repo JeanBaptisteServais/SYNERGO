@@ -49,7 +49,9 @@ In course = writting code
 
 <h1>Hand</h1>
 
-  In course
+  - <h2>Identifiy fingers</h2>
+
+  <p> Here we need to detect to which finger belongs its points </p>
 
 <h1>Talk</h1>
 
