@@ -21,7 +21,7 @@ The model by ... detect almost always the thumb so we rely on the thumb. Next we
 
 We have deduce max and mid finger's localisation as:
 
-D(t, i) if i < w * 0.574 where p is the thumb, i is index and w is the width of the contour 
+D(t, i) if i < w * 0.574 <br> where p is the thumb, i is index and w is the width of the contour 
 
 
 
