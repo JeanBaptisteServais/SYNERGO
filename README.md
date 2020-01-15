@@ -48,12 +48,8 @@ In course = writting code
 
 <h1>Hand</h1>
 
-  - <h2>Our example</h2>
-   
-    ![bb](https://user-images.githubusercontent.com/54853371/72481522-17923c00-37fb-11ea-9756-60bb727a06d4.png)
     
-    
-    
+
   - <h2>Hand detection</h2>
   
   model hand detection by:
@@ -83,7 +79,8 @@ In course = writting code
   <p> Here we need to detect to which finger belongs its points for that we must define distances according to the direction of the hand that it is lying and thus in width, or on the contrary in length. For that use <stron>the contours</strong> of the hand.
 
 <center>
-
+  
+![bb](https://user-images.githubusercontent.com/54853371/72481522-17923c00-37fb-11ea-9756-60bb727a06d4.png)
 ![bb](https://user-images.githubusercontent.com/54853371/72475132-9337bd00-37ea-11ea-8c55-7e78e420502a.png)
 ![bb](https://user-images.githubusercontent.com/54853371/72475207-c37f5b80-37ea-11ea-964e-57548bee9ca1.png)
 ![bb](https://user-images.githubusercontent.com/54853371/72475315-f1fd3680-37ea-11ea-9c51-4f751bfbd02f.png)
