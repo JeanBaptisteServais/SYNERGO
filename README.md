@@ -90,9 +90,9 @@ The model by ... detect almost always the thumb so we rely on the thumb. Next we
 
 We have think thumb-index distance as:
 
-    D(t, i) if i < w * 0.574 
+    D(t, i) = i < w * 0.574 
     
-    D(t, m) if w * 0.574  < i < w * 0.775 
+    D(t, m) = w * 0.574  < m < w * 0.775 
 
 And distance beetween finger's are egal to
 
