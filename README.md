@@ -21,7 +21,7 @@ https://github.com/LeGrosLezard/S-Y-N-E-R-G-O -> acces "computer vision"
 
 ![aa](https://user-images.githubusercontent.com/54853371/71028191-20fd8b00-210d-11ea-90fd-2ef5c299e2af.png)
 
-Hi i'm Jean Baptiste i try to find the job of my dream hum hum i try to be to be hired somewhere ^^ in waiting i take for the most of time, sometimes take pleasure !
+Hi i'm Jean Baptiste i try to find the job of my dream hum hum i try to be to be hired somewhere, in waiting i take for the most of time, sometimes pleasure !
 
 
 
