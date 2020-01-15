@@ -56,16 +56,22 @@ In course = writting code
   model skeletton by: 
   
   - <h2>Hand mask</h2>
-  
+    <em>Maybe finish</em>
+    
   - <h2>no_finger_found</h2>
-  
+    <em>Maybe finish</em>
+    
   - <h2>hand_location</h2>
-  
+    <em>Maybe finish</em>
+    
   - <h2>palm_analyse</h2>
-  
+    <em>Maybe finish</em>
+    
   - <h2>reorganize_phax_position</h2>
-  
+    <em>Maybe finish</em>
+    
   - <h2>reorganize_fingers</h2>
+    <em>Maybe finish</em>
 
   - <h2>Identifiy fingers <em>In course</em></h2> 
 
