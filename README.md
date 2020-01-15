@@ -19,17 +19,25 @@
 
 The model by ... detect almost always the thumb so we rely on the thumb. Next we search the next point of the thumb given above.
 
-We have deduce max and mid finger's localisation as:
+We have think thumb-index distance as:
 
-D(t, i) if i < w * 0.574 
+    D(t, i) if i < w * 0.574 
 
-And distance beetween finger's are egal to (w * 0.295) * x 
+And distance beetween finger's are egal to
 
-or h * ...
+    D(Fi, Fi+1) = (w * 0.295) * x 
 
-    where t is thumb, i is index and w is the width of the contour 
+    or h * ...
 
+t = thumb
 
+i = index 
+
+w, h = width, height of the contour 
+
+F = finger
+
+x = finger number
 
 
 
