@@ -9,14 +9,7 @@
 <strong>Later: Mobile :</strong> register in real time video with my smarthphone, download it and have acces to the analysis (1-2 hours later).
 
 
-Quote analysis's just an exercice for show my qualities as web developper and my knowlegeds in differents libraries and my begenning with deep learning <strong>frameworks</strong>.
 
-
-In case, there are my work <strong>from other work</strong> this is my 2 branches :
-
-https://github.com/pastrouveedespeudo;  -> acces web site
-
-https://github.com/LeGrosLezard/S-Y-N-E-R-G-O -> acces "computer vision"
 
 
 ![aa](https://user-images.githubusercontent.com/54853371/71028191-20fd8b00-210d-11ea-90fd-2ef5c299e2af.png)
