@@ -59,6 +59,10 @@ In course = writting code
   - <h2>Hand mask</h2>
     <em>Maybe finish</em>
     
+  - <h2>Hand skeltton</h2>
+  
+    ![bb](https://user-images.githubusercontent.com/54853371/72481522-17923c00-37fb-11ea-9756-60bb727a06d4.png)
+    
   - <h2>no_finger_found</h2>
     <em>Maybe finish</em>
     
@@ -80,7 +84,7 @@ In course = writting code
 
 <center>
   
-![bb](https://user-images.githubusercontent.com/54853371/72481522-17923c00-37fb-11ea-9756-60bb727a06d4.png)
+
 ![bb](https://user-images.githubusercontent.com/54853371/72475132-9337bd00-37ea-11ea-8c55-7e78e420502a.png)
 ![bb](https://user-images.githubusercontent.com/54853371/72475207-c37f5b80-37ea-11ea-964e-57548bee9ca1.png)
 ![bb](https://user-images.githubusercontent.com/54853371/72475315-f1fd3680-37ea-11ea-9c51-4f751bfbd02f.png)
