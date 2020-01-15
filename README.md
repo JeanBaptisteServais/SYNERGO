@@ -1,5 +1,7 @@
 # SYNERGO (In course)
 
+care not working, need to put it into file, and to put video_treatment for have dimensions
+
 <strong>web site for behavior video analysis</strong> , we are curently writting the code for hand detection. The part of the web site, our speciality and the UML analysis's progress. The current code is not finish. We writting it on an another branch (another github)
 
 <strong>In this web site i can: </strong> create my account, have acces to video analysis, make an analysis of my video (download it, wait 1-2 hours) and watch it ! Save my video, publish it on social media ...
