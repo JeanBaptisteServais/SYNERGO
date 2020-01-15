@@ -67,7 +67,7 @@ In course = writting code
   
   - <h2>reorganize_fingers</h2>
 
-  - <h2>Identifiy fingers</h2>
+  - <h2>Identifiy fingers <em>In course</em></h2> 
 
   <p> Here we need to detect to which finger belongs its points for that we must define distances according to the direction of the hand that it is lying and thus in width, or on the contrary in length. For that use <stron>the contours</strong> of the hand.
 
