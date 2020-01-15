@@ -23,9 +23,13 @@ We have deduce max and mid finger's localisation as:
 
 D(t, i) if i < w * 0.574 
 
+And distance beetween finger's are egal to (w * 0.295) * x 
+
+or h * ...
+
     where t is thumb, i is index and w is the width of the contour 
 
-And distance beetween finger's are egal to w * 0.295 or h * ...
+
 
 
 
