@@ -98,7 +98,7 @@ And distance beetween finger's are egal to
 
     or h * ...
 
-t = thumb; i = index; w, h = width, height of the contour; F = finger; x = finger number
+t = thumb; i = index; w, h = width, height of the contour; F = finger without thumb; x = finger number
 
 
 
