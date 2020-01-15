@@ -50,6 +50,20 @@ In course = writting code
 
 <h1>Hand</h1>
 
+
+  - <h2>Hand detection</h2>
+  
+  - <h2>Hand mask</h2>
+  
+  - <h2>no_finger_found</h2>
+  
+  - <h2>hand_location</h2>
+  
+  - <h2>palm_analyse</h2>
+  
+  - <h2>reorganize_phax_position</h2>
+  
+
   - <h2>Identifiy fingers</h2>
 
   <p> Here we need to detect to which finger belongs its points for that we must define distances according to the direction of the hand that it is lying and thus in width, or on the contrary in length. For that use <stron>the contours</strong> of the hand.
@@ -82,7 +96,13 @@ t = thumb; i = index; w, h = width, height of the contour; F = finger; x = finge
 </p>
 
 
-
+  - <h2>reorganize_finger</h2>
+  
+  - <h2>Identifiy fingers</h2>
+  
+  - <h2>Identifiy fingers</h2>
+  
+  - <h2>Identifiy fingers</h2>
 
 
 
