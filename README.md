@@ -98,7 +98,7 @@ We have think thumb-index distance as:
 
     D(t, i) = i < w * 0.574 
     
-    D(t, m) = w * 0.574  < m < w * 0.775 
+    D(t, m) = w * 0.574  <= m < w * 0.775 or D(t, m) ∈ [w * 0.574; w * 0.775[
     
     D(t, an) = in course
     
@@ -116,7 +116,9 @@ And distance beetween finger's are egal to
     
     - w if w > h and y if h > w 
     
-    - w, h is on average to 120 - 100 pxs
+    - w ∈ [114; 130] pxs
+    
+    - h  ∈ [81; 120] pxs
 
 
 t = thumb; i = index; m = major; w, h = width, height of the contour; F = finger without thumb; x = finger number
