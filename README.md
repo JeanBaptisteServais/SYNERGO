@@ -108,7 +108,7 @@ We have think thumb-index distance as:
 
 And distance beetween finger's are egal to
 
-    D(Fi, Fi+1) = (w * 0.295) * x 
+    D(Fi, Fi+1) = (w * 0.295) * x where i ∈ N and i ∈ [1; 4] 
 
     or h * ... in course
 
