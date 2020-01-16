@@ -98,7 +98,7 @@ We have think thumb-index distance as:
 
     D(t, i) = i < w * 0.574 
     
-    D(t, m) = w * 0.574  <= m < w * 0.775 or D(t, m) ∈ [w * 0.574; w * 0.775[
+    D(t, m) = w * 0.574  < m < w * 0.775 or D(t, m) ∈ ]w * 0.574; w * 0.775[
     
     D(t, an) = in course
     
