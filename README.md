@@ -112,7 +112,12 @@ And distance beetween finger's are egal to
 
     or h * ... in course
 
-    - where w length of hand position and h is hight of hand position, w if w > h and y if h > w
+    - where w, h are length and hight of hand position,
+    
+    - w if w > h and y if h > w 
+    
+    - w, h is on average to 120 - 100 pxs
+
 
 t = thumb; i = index; m = major; w, h = width, height of the contour; F = finger without thumb; x = finger number
 
