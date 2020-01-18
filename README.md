@@ -1,6 +1,6 @@
 # SYNERGO (In course)
 
-care not working, need to put it into file, and to put video_treatment for have dimensions
+<strong>care not working, need to put it into file, and to put video_treatment for have dimensions</strong>
 
 <strong>web site for behavior video analysis</strong> , we are curently writting the code for hand detection. The part of the web site, our speciality and the UML analysis's progress. The current code is not finish. We writting it on an another branch (another github)
 
