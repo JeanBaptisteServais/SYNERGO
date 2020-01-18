@@ -23,6 +23,8 @@ https://synergo2.herokuapp.com/ In progress
 
 domaine fonctionelle
 
+package
+
 acteur
 
 cas utilisation
