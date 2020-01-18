@@ -21,7 +21,29 @@ care not working, need to put it into file, and to put video_treatment for have 
 https://synergo2.herokuapp.com/ In progress
 
 
+domaine fonctionelle
 
+acteur
+
+cas utilisation
+
+scenarii
+
+
+
+solution fonctionelle
+
+
+
+solution technique
+
+element composant systeme
+
+deploiement composant
+
+diagramme classe
+
+modele physique de donnée
 
 
 
