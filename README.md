@@ -45,9 +45,9 @@ deploiement composant
 
 <h2>diagramme de classe</h2>
 
-<h3>diagramme classe web site</h3>
+<h3>web site</h3>
 
-<h4>video part</h4>
+<h3>video part</h3>
 
 ![DIAGRAMME DE CLASSE TRUK SYNERGO 18 janvier](https://user-images.githubusercontent.com/54853371/72666930-e1310880-3a16-11ea-9966-915c4b2376c2.png)
 
