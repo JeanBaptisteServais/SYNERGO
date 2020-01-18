@@ -21,6 +21,25 @@ care not working, need to put it into file, and to put video_treatment for have 
 https://synergo2.herokuapp.com/ In progress
 
 
+
+
+
+
+<h1>Video part</h1>
+
+![DIAGRAMME DE CLASSE TRUK SYNERGO 18 janvier](https://user-images.githubusercontent.com/54853371/72666930-e1310880-3a16-11ea-9966-915c4b2376c2.png)
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
 Finish = Doc and verify to apply
 
 In course = writting code
