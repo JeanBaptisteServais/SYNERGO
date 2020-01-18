@@ -7,6 +7,8 @@ def hand_location(thumb, index, major, annular, auricular, crop):
     But hand can turn around and we hope palm area'll can
     give us that"""
 
+    print("HAND LOCATION")
+
     hand = ""
     copy = crop.copy()
 
@@ -27,6 +29,8 @@ def hand_location(thumb, index, major, annular, auricular, crop):
     #compare each last point finger to the thumb pts
     left = 0
     right = 0
+    top = 0
+    bot = 0
     #if thumb to left of points left += 1 right in opposite case
     for fing in end_fingers:
         if thumb[0] < fing[0]:
@@ -34,17 +38,30 @@ def hand_location(thumb, index, major, annular, auricular, crop):
         elif thumb[0] > fing[0]:
             right += 1
 
+        if thumb[1] < fing[1]:
+            top += 1
+        elif thumb[1] > fing[1]:
+            bot += 1
+
+
     if left > right:
         hand = "pouce gauche"
     elif right > left:
         hand = "pouce droite"
-    else:
-        print("probleme HAND LOCATION")
+
+    if top > bot:
+        print("Doigts tendent vers le bas")
+    elif bot > top:
+        print("Doigts tendent vers le haut")
+
 
     cv2.imshow("Hand", copy)
     cv2.waitKey(0)
 
     print(hand)
+
+    print("")
+
     return hand
 
 

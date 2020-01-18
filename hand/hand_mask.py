@@ -1,5 +1,5 @@
 import cv2
-
+import numpy as np
 
 def make_line(thresh, margin):
     """We make line for detect more than one area

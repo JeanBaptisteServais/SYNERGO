@@ -10,15 +10,20 @@ from numpy import expand_dims, squeeze
 
 from scipy.spatial import distance as dist
 
-
+#Treat the skeletton
+from sign import sign
+from skeletton import hand_skelettor
 from palm_analyse import palm_analyse
+from hand_location import hand_location
 from no_finger_found import no_finger_found
+from identify_fingers import identify_fingers
 from reorganize_finger import reorganize_finger
 from reorganize_phax_position import reorganize_phax_position
-from hand_location import hand_location
-from skeletton import hand_skelettor
 from hand_mask import skin_detector, hand_treatment, make_bitwise
-from sign import sign
+
+#Treat fingers
+from thumb_finger import thumb_finger
+
 
 def save(crop, C):
     cv2.imwrite(r"C:\Users\jeanbaptiste\Desktop\hand_picture\a" + str(C) + ".jpg", crop)
@@ -70,11 +75,17 @@ def hands_detections(scores, boxes, frame):
 
 
 
+LAST_FINGERS_RIGHT = [([[(89, 29), (92, 26)], 'droite'], 'I'), ([[(83, 65), (105, 51), (114, 48), (130, 42)], 'droite'], 'M'), ([[(91, 76), (111, 73), (125, 70), (138, 67)], 'droite'], 'An'), ([[(92, 89), (108, 95), (119, 103), (130, 109)], 'droite'], 'a'), ([[(56, 76), (42, 64), (26, 54), (23, 51)], 'gauche'], 'thumb')]
+LAST_FINGERS_LEFT = []
+def treat_skeletton_points(skeletton, position, finger, rectangle, crop):
 
-def treat_skeletton_points(skeletton, position, finger, proba, rectangle, crop):
 
+    global LAST_FINGERS_RIGHT
+    global LAST_FINGERS_LEFT
 
     x, y, w, h = rectangle
+    print("Box de la main est de :", rectangle)
+
 
     palm_center =  position[0][0]
 
@@ -103,34 +114,19 @@ def treat_skeletton_points(skeletton, position, finger, proba, rectangle, crop):
 
 
     #delete false points finger detection
-    finger_sorted, fingers_orientation = reorganize_phax_position(thumb, index, major, annular,
-                                             auricular, crop, fingers_direction)
+    sorted_fingers, fingers_orientation = reorganize_phax_position(thumb, index, major, annular,
+                                             auricular, crop, fingers_direction, LAST_FINGERS_RIGHT)
 
     #reorganize finger's position
-    thumb, index, major, annular, auricular =\
-    reorganize_finger(hand_localised, crop, miss_points, finger_sorted, fingers_orientation)
-
-    #reattribuate points
-    thumb = finger_sorted[0]
-    index = finger_sorted[1]
-    major = finger_sorted[2]
-    annular = finger_sorted[3]
-    auricular = finger_sorted[4]
+    thumb, sorted_points,\
+    direction , axis = reorganize_finger(crop, miss_points,
+                                         sorted_fingers, fingers_orientation)
 
 
-
-    #thumb_analyse(palm_center, thumb, index, crop)
-    #index_analyse(thumb, index, major, crop)
-
-    #major_analyse(major, palm_center, rectangle, crop)
-
-    #annular_analyse(annular, palm_center, rectangle, crop)
-    #auricular_analyse(auricular, palm_center, rectangle, crop)
+    finger_sorted = identify_fingers(thumb, sorted_points, crop, rectangle, direction, axis)
 
 
-
-
-    sign(thumb, index)
+    thumb_finger(finger_sorted)
 
 
 
@@ -138,10 +134,18 @@ def treat_skeletton_points(skeletton, position, finger, proba, rectangle, crop):
 
 
 
+    #sign(thumb, index)
 
 
 
-C = 0
+    #Save the hand combinaison
+    LAST_FINGERS_RIGHT = finger_sorted
+
+
+
+
+
+C = 626
 
 def hand(frame, detection_graph, sess, head_box):
     global C
@@ -184,7 +188,7 @@ if __name__ == "__main__":
     
 
 
-    IM = 27
+    IM = 63
 
 
     image = r"C:\Users\jeanbaptiste\Desktop\hand_picture\a{}.jpg".format(str(IM))
@@ -206,10 +210,8 @@ if __name__ == "__main__":
     copy = img.copy()
     rectangle = cv2.boundingRect(contours[-1])
 
-
-
-    points, position, finger, proba = hand_skelettor(copy_img, protoFile, weightsFile)
-    treat_skeletton_points(points, position, finger, proba, rectangle, img)
+    points, position, finger = hand_skelettor(copy_img, protoFile, weightsFile)
+    treat_skeletton_points(points, position, finger, rectangle, img)
 
 
 
@@ -221,22 +223,23 @@ if __name__ == "__main__":
 
 
 #TODO
+    #7 No pouce
+    #3 annuiare
+    #paume de la main
 
-    
-    
-    #image 5 un pec change major et le doigt dapres
-    #changement de perspective doigt plus long -> penché vers torse et versa #531
-    #angle entre debut doigt et fin ex 259 doigt coté face
-    #angle 261
-    #pouce via index via majeur ect ex pouce rond index -> 261
+
 
 
 #FUNCTION
     #rangement des pts du doigt -> 77
     #egalité réglé 1
-    #delete phax 17; 25; 27
-    #reorganisation doigt 23 (pts theorique non respecté)
-    #finger remove 27
+    #delete phax 17; 25; 27; 5; 26; 29; 45
+    #reorganisation doigt 23; 25 (pts theorique non respecté)
+    #finger remove 27; 25;29;35; 61      
+    #Identify finger 27; 25
+    #last reorganise 49
+    #extremum phax 55
+    #foyer 61
 
 
 
@@ -246,6 +249,19 @@ if __name__ == "__main__":
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
