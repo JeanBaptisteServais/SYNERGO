@@ -123,7 +123,16 @@ In course = writting code
     <em>Maybe finish</em>
     
   - <h2>reorganize_phax_position</h2>
-    <em>Maybe finish</em>
+  
+    ![bb](https://user-images.githubusercontent.com/54853371/72691259-58a08e00-3b24-11ea-8f07-585da9fc8baa.png)
+    
+    
+    
+    
+  - <h2>Delete phax</h2>
+  - <h2>Delete fingers</h2>
+    
+    
     
   - <h2>reorganize_fingers</h2>
     <em>Maybe finish</em>
