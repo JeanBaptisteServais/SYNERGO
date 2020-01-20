@@ -111,7 +111,7 @@ In course = writting code
     
   - <h2>Hand skeltton</h2>
   
-
+![bb](https://user-images.githubusercontent.com/54853371/72691359-1592ea80-3b25-11ea-9539-861a3bfff08c.png)
     
   - <h2>no_finger_found</h2>
     <em>Maybe finish</em>
