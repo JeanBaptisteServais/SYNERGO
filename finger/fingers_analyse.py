@@ -65,11 +65,18 @@ def defintion_to_angle(finger_name, angle):
 
     elif 20 < angle < 60:
         print("doigt legrement penché droite")
+        position = "droit penche legerement droite"
+
+    elif 60 < angle < 80:
+        print("doigt penché droite")
         position = "droit penche droite"
 
     elif 80 < angle < 110:
         print("doigt droit")
         position = "droit"
+
+    else:
+        print("NO VALUEEEEEEEEEEEEEEEEEEEEEEEEEE")
 
     return position
 
@@ -127,6 +134,8 @@ def top_bot(points):
     return sens
 
 
+
+LEANNING = ("droit penche legerement droite", "droit penche droite")
 def sens_finger(fingers_dico, position_fingers, crop):
 
     sens_fingers = {"thumb": [], "I": [], "M": [], "An": [], "a": []}
@@ -139,7 +148,7 @@ def sens_finger(fingers_dico, position_fingers, crop):
             sens_fingers[finger_name] = sensX
             print(sensX)
 
-        elif position_fingers[finger_name] == "droit penche droite":
+        elif position_fingers[finger_name] in LEANNING:
             sensX = left_right(points)
             sensY = top_bot(points)
             sens_fingers[finger_name] = sensX, sensY
@@ -323,6 +332,22 @@ def similar_points_finger(fingers_dico, crop):
 
     if same is False:
         print("no finger same points")
+
+
+
+
+
+
+
+
+
+
+#=================================================================== courbure_du_doigt()
+
+def courbure_du_doigt():
+    pass
+
+
 
 
 #=================================================================== fingers_analyse()
