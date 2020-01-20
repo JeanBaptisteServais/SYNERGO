@@ -15,6 +15,8 @@ from sign import sign
 from skeletton import hand_skelettor
 from palm_analyse import palm_analyse
 from hand_location import hand_location
+from delete_phax import delete_phax
+from delete_finger import delete_finger
 from no_finger_found import no_finger_found
 from identify_fingers import identify_fingers
 from reorganize_finger import reorganize_finger
@@ -22,7 +24,7 @@ from reorganize_phax_position import reorganize_phax_position
 from hand_mask import skin_detector, hand_treatment, make_bitwise
 
 #Treat fingers
-from thumb_finger import thumb_finger
+from fingers_analyse import fingers_analyse
 
 
 def save(crop, C):
@@ -113,9 +115,16 @@ def treat_skeletton_points(skeletton, position, finger, rectangle, crop):
 
 
 
-    #delete false points finger detection
+    #Sort fingers
     sorted_fingers, fingers_orientation = reorganize_phax_position(thumb, index, major, annular,
-                                             auricular, crop, fingers_direction, LAST_FINGERS_RIGHT)
+                                             auricular, crop, fingers_direction)
+
+    sorted_fingers, fingers_orientation = delete_phax(sorted_fingers, fingers_orientation,
+                                                        LAST_FINGERS_RIGHT, crop)
+
+
+    sorted_fingers, fingers_orientation = delete_finger(sorted_fingers,
+                                                        fingers_orientation, crop)
 
     #reorganize finger's position
     thumb, sorted_points,\
@@ -126,7 +135,7 @@ def treat_skeletton_points(skeletton, position, finger, rectangle, crop):
     finger_sorted = identify_fingers(thumb, sorted_points, crop, rectangle, direction, axis)
 
 
-    thumb_finger(finger_sorted)
+    fingers_analyse(finger_sorted, crop)
 
 
 
@@ -188,7 +197,7 @@ if __name__ == "__main__":
     
 
 
-    IM = 63
+    IM = 73
 
 
     image = r"C:\Users\jeanbaptiste\Desktop\hand_picture\a{}.jpg".format(str(IM))
@@ -236,10 +245,10 @@ if __name__ == "__main__":
     #delete phax 17; 25; 27; 5; 26; 29; 45
     #reorganisation doigt 23; 25 (pts theorique non respecté)
     #finger remove 27; 25;29;35; 61      
-    #Identify finger 27; 25
+    #Identify finger 27; 25; 73
     #last reorganise 49
     #extremum phax 55
-    #foyer 61
+    #foyer 61; 73
 
 
 
