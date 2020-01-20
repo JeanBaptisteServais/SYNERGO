@@ -201,8 +201,8 @@ t = thumb; i = index; m = major; w, h = width, height of the contour; F = finger
   
   - <h2>Identifiy fingers</h2>
 
-  - <h2>Identifiy fingers</h2>
-  
+  - <h2>similar_points_finger</h2>
+  - <h2>courbure_du_doigt</h2>
   - <h2>sens finger</h2>
   - <h2>position des doigts les uns par apport aux autres</h2>  
   - <h2>space</h2>
