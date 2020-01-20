@@ -193,15 +193,25 @@ t = thumb; i = index; m = major; w, h = width, height of the contour; F = finger
 </p>
 
 
-  - <h2>reorganize_finger</h2>
+  - <h1>Fingers</h1>
   
-  - <h2>Identifiy fingers</h2>
+  - <h2>defintion_to_angle</h2>
   
-  - <h2>Identifiy fingers</h2>
+  - <h2>position_of_the_finger</h2>
   
   - <h2>Identifiy fingers</h2>
 
-
+  - <h2>Identifiy fingers</h2>
+  
+  - <h2>sens finger</h2>
+  - <h2>position des doigts les uns par apport aux autres</h2>  
+  - <h2>space</h2>
+  - <h2>position_beetween_fingers</h2>
+  - <h2>length_of_fingers</h2>
+  
+  - <h2>Signes</h2>
+  
+  
   Requirements: (pip install -r requirements_hand.txt)
 
   to download :
