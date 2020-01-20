@@ -124,7 +124,7 @@ In course = writting code
     
   - <h2>reorganize_phax_position</h2>
   
-  Example of two hearths points:
+  Example of two hearths points of thumb finger who's changed order of finger's and theirs annotations:
   
   ![bb](https://user-images.githubusercontent.com/54853371/72691259-58a08e00-3b24-11ea-8f07-585da9fc8baa.png)
     
