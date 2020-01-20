@@ -196,7 +196,7 @@ t = thumb; i = index; m = major; w, h = width, height of the contour; F = finger
   - <h1>Fingers</h1>
   
   - <h2>defintion_to_angle</h2>
-      <em>Maybe finish</em>
+      <em>In course</em>
   - <h2>position_of_the_finger</h2>
       <em>Maybe finish</em>
   - <h2>Identifiy fingers</h2>
