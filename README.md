@@ -196,21 +196,28 @@ t = thumb; i = index; m = major; w, h = width, height of the contour; F = finger
   - <h1>Fingers</h1>
   
   - <h2>defintion_to_angle</h2>
-  
+      <em>Maybe finish</em>
   - <h2>position_of_the_finger</h2>
-  
+      <em>Maybe finish</em>
   - <h2>Identifiy fingers</h2>
-
+    <em>Maybe finish</em>
   - <h2>similar_points_finger</h2>
+      <em>Maybe finish</em>
   - <h2>courbure_du_doigt</h2>
+      <em>In course</em>
   - <h2>sens finger</h2>
+      <em>Maybe finish</em>
   - <h2>position des doigts les uns par apport aux autres</h2>  
+      <em>Maybe finish</em>
   - <h2>space</h2>
+      <em>Maybe finish</em>
   - <h2>position_beetween_fingers</h2>
+      <em>Maybe finish</em>
   - <h2>length_of_fingers</h2>
+      <em>Maybe finish</em>
   
   - <h2>Signes</h2>
-  
+      <em>In course</em>
   
   Requirements: (pip install -r requirements_hand.txt)
 
