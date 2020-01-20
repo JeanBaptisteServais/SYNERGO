@@ -124,7 +124,9 @@ In course = writting code
     
   - <h2>reorganize_phax_position</h2>
   
-    ![bb](https://user-images.githubusercontent.com/54853371/72691259-58a08e00-3b24-11ea-8f07-585da9fc8baa.png)
+  hearth points:
+  
+   ![bb](https://user-images.githubusercontent.com/54853371/72691259-58a08e00-3b24-11ea-8f07-585da9fc8baa.png)
     
     
     
