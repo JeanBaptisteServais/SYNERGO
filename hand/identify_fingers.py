@@ -21,39 +21,39 @@ def thumb_to_next_finger(fingers, thumb, finger_annotation,
     """Sometimes no detection of index, so we need to identify by distance
     the next finger"""
 
-    fingers_identify = [(thumb, "thumb")]
+    fingers_identify = [((thumb, "thumb"))]
 
     #Draw thumb points
-    draw_line_pts(copy, "P", thumb[0][-1], thumb[0][-1])
+    draw_line_pts(copy, "P", thumb[-1], thumb[-1])
 
     #Identify distance beetween first and thumb point
-    thumb_index = dist.euclidean(fingers[0], thumb[0][-1])
+    thumb_index = dist.euclidean(fingers[0], thumb[-1])
     print(thumb_index, (rectangle_w, rectangle_h))
 
 
     #Index
     if area_for_ratio == "width" and thumb_index < rectangle_w * 0.574 or\
-       area_for_ratio == "height" and thumb_index < rectangle_w * 0.574:
+       area_for_ratio == "height" and thumb_index < rectangle_h * 0.607:
         fingers_identify.append((fingers[0], finger_annotation[0]))
-        draw_line_pts(copy, finger_annotation[0], thumb[0][-1], fingers[0])
+        draw_line_pts(copy, finger_annotation[0], thumb[-1], fingers[0])
         [REMOVING(finger_annotation) for iteration in range(1)]
 
     #Major
     elif area_for_ratio == "width" and rectangle_w * 0.775 > thumb_index > rectangle_w * 0.574 or\
-         area_for_ratio == "height" and rectangle_w * 0.775 > thumb_index > rectangle_w * 0.574:
+         area_for_ratio == "height" and rectangle_h * 0.775 > thumb_index > rectangle_h * 0.607:
         fingers_identify.append((fingers[0], finger_annotation[1]))
-        draw_line_pts(copy, finger_annotation[1], thumb[0][-1], fingers[0])
+        draw_line_pts(copy, finger_annotation[1], thumb[-1], fingers[0])
         [REMOVING(finger_annotation) for iteration in range(2)]
 
     #Auricular
     elif 130 > thumb_index > 105:
-        draw_line_pts(copy, finger_annotation[2], thumb[0][-1], fingers[0])
+        draw_line_pts(copy, finger_annotation[2], thumb[-1], fingers[0])
         fingers_identify.append((fingers[0], finger_annotation[2]))
         [REMOVING(finger_annotation) for iteration in range(3)]
 
     #Annular
     elif thumb_index > 130:
-        draw_line_pts(copy, finger_annotation[3], thumb[0][-1], fingers[0])
+        draw_line_pts(copy, finger_annotation[3], thumb[-1], fingers[0])
         fingers_identify.append((fingers[0], finger_annotation[3]))
         [REMOVING(finger_annotation) for iteration in range(1)]
 
@@ -126,9 +126,9 @@ def fingers_distance(distance, rectangle_w, rectangle_h, area_for_ratio,
 
 #========================================================================= identify_fingers()
 
-def printing(rectangle, thumb, fingers, direction, axis):
+def printing(rectangle, thumb, fingers):
     print("\nIDENTIFY FINGERS \n Box de la main est de: ",
-          rectangle, "\n", thumb, "\n", fingers, "\n", direction, axis)
+          rectangle, "\n", thumb, "\n", fingers, "\n")
 
 
 def ratio_choice(rectangle_w, rectangle_h):
@@ -138,54 +138,61 @@ def ratio_choice(rectangle_w, rectangle_h):
     return area
 
 
-def releve_data_thumb_fingers(points, thumb):
+def distance_thumb_fingers(points, thumb):
     """We need thumb/fingers space for releve ratio
     We can have a bad sorted of fingers.
     So we verify a last time distance by contribution of thumb."""
 
-    print("\nreleve_data_thumb_fingers \n")
-    print(points, thumb)
+    print("\n releve_data_thumb_fingers\n", points, thumb)
 
-    reorganisation = []
-
-    #Last sort
     #We sort by asc data and compare it with data give before.
-    no_sorted_distance = [dist.euclidean(i, thumb[0][-1]) for i in points if i != ()]
-    sorted_distance = sorted([dist.euclidean(i, thumb[0][-1]) for i in points if i!= ()])
+    no_sorted_distance = [dist.euclidean(i, thumb[-1]) for i in points if i != ()]
+    sorted_distance = sorted([dist.euclidean(i, thumb[-1]) for i in points if i!= ()])
 
-    #Matching distances sorted ok.
-    if no_sorted_distance == sorted_distance:
-        print("ok good sort thumb - fingers")
-        for pts in points:
-            if pts != (): print(dist.euclidean(pts, thumb[0][-1]))
+    if no_sorted_distance == sorted_distance:   #Matching distances sorted ok.
+        print("\nOK sort thumb - fingers", [print(dist.euclidean(pts, thumb[-1])) for pts in points if pts != ()])
 
-
-    #Matching distances sorted error.
-    else:
-        print("\n \nre organisation of data")
-        reorganisation += [pts for sorted_pts in sorted_distance for pts in points
-                           if pts != () and dist.euclidean(pts, thumb[0][-1]) == sorted_pts]
-
+    else:                                       #Matching distances sorted error.
+        print("\n\nre-organisation of data")
+        reorganisation = []
+        reorganisation += [pts for sorted_pts in sorted_distance for pts in points if pts != ()
+                           and dist.euclidean(pts, thumb[-1]) == sorted_pts]
         points = reorganisation
-        for pts in points:
-            if pts != ():
-                print(dist.euclidean(pts, thumb[0][-1]))
+        [print(dist.euclidean(pts, thumb[-1])) for pts in points if pts != ()]
 
     return points
+
+
+def distance_resorted_beetween_fingers(current_fingers, fingers, all_finger):
+
+    distance_to_sort = sorted([dist.euclidean(current_fingers, i) for i in fingers])
+    reorganisation = []
+    reorganisation += [fing for sort in distance_to_sort for fing in fingers if fing != ()
+                        and dist.euclidean(current_fingers, fing) == sort]
+
+    if fingers != reorganisation:
+        print("order changed")
+
+    else:
+        reorganisation = all_finger
+
+    return reorganisation
+
             
 
 def appropriate_finger_to_his_points(fingers, original_fingers):
     """From original fingers, recuperate all point and attribuate
     it to a finger"""
 
-    return [(j, i[1]) for i in fingers[1:] for j in original_fingers
-            if j != None and i[0] == j[0][-1]] + [fingers[0]]
+    return [(j, i[1]) for i in fingers
+            for j in original_fingers if i[0] == j[-1] and j != None] + [fingers[0]]
+    
+
 
 
 
 FINGER_ANNOTATION = ["I", "M", "An", "a"]
-
-def identify_fingers(thumb, fingers, crop, rectangle, direction, axis):
+def identify_fingers(thumb, fingers, crop, rectangle):
 
     global FINGER_ANNOTATION
 
@@ -193,33 +200,39 @@ def identify_fingers(thumb, fingers, crop, rectangle, direction, axis):
     copy = crop.copy()
     _, _, rectangle_w, rectangle_h = rectangle
 
-    printing(rectangle, thumb, fingers, direction, axis)
+    printing(rectangle, thumb, fingers)
 
 
     #Add None then replace by () my first lambda so let it
     fingers += [None for i in range(4 - len(fingers))]
-    fingers = [(lambda x: () if x == None else x[0][-1])(i) for i in fingers]
+    fingers = [(lambda x: () if x == None else x[-1])(i) for i in fingers]
 
 
     #We have fingers
     if len(fingers) > fingers.count(()):
-    
+
         #Choice area in function of hand position
         area_for_ratio = ratio_choice(rectangle_w, rectangle_h)
         print("\nratio choosen: ", area_for_ratio)
 
         #Reorganise a last time
-        fingers = releve_data_thumb_fingers(fingers, thumb)
+        fingers = distance_thumb_fingers(fingers, thumb)
 
         #Identify finger after the thumb
         first_fingerX = thumb_to_next_finger(fingers, thumb, FINGER_ANNOTATION, copy,
                              rectangle_w, rectangle_h, area_for_ratio)
 
         fingersX = []
+
+
         for i in range(len(fingers)):
             print("\n", FINGER_ANNOTATION)
 
             if i < len(fingers) - 1 and fingers[i] != () and fingers[i + 1] != ():
+
+                print(fingers[i], fingers[i + 1])
+
+                fingers = distance_resorted_beetween_fingers(fingers[i], fingers[i:], fingers)
 
                 distance = dist.euclidean(fingers[i], fingers[i + 1])
                 print(distance, (rectangle_w, rectangle_h))
@@ -228,19 +241,21 @@ def identify_fingers(thumb, fingers, crop, rectangle, direction, axis):
                                  area_for_ratio, FINGER_ANNOTATION, fingers, copy, i,
                                  fingersX)
 
+
+
         fingers = first_fingerX + fingersX
         fingers = appropriate_finger_to_his_points(fingers, original_fingers)
 
     #Only have Thumb finger
     elif fingers.count(()) == len(fingers) and thumb != ():
-        fingers = thumb
-        draw_line_pts(copy, "P", thumb[0][-1], thumb[0][-1])
+        draw_line_pts(copy, "P", thumb[-1], thumb[-1])
         cv2.imshow("only thumb", copy)
         cv2.waitKey(0)
-        cv2.destroyAllWindows
+
 
     else:
         print("None")
+
 
 
 

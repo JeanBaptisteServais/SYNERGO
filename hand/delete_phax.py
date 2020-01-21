@@ -1,50 +1,44 @@
 import cv2
-from scipy.spatial import distance as dist
 import numpy as np
-
-
-
-
-
-#=========================================================================== foyers
+from scipy.spatial import distance as dist
 
 
 def recuperate_distance(finger, copy):
+    """Recuperate distance from pair and pairs"""
 
-    distance_points = [dist.euclidean(finger[i], finger[i + 1])
-                       for i in range(len(finger)) if i < len(finger) - 1]
+    distance = [[dist.euclidean(finger[i], finger[i + 1])                       #Recuperate distance
+                for i in range(len(finger)) if i < len(finger) - 1]             #of pair
 
-    pair = [(finger[i], finger[i + 1]) for i in range(len(finger))
+    pair = [(finger[i], finger[i + 1]) for i in range(len(finger))              #Recuperate pairs
             if i < len(finger) - 1]
 
-    return pair, distance_points
+    return pair, distance
 
 
 def analyse_distance(distance_points):
+
     foyers = []
 
     for distance in distance_points:
-
+        print(distance)
         if distance > 30:    foyers.append("far")
         elif distance < 30 : foyers.append("ok")
- 
+
     print("\n", foyers)
     return foyers
 
-
-
-def build_foyer(f1, f2, points, copy):
+def build_foyer(f, points, copy):
 
     copy_foyer = copy.copy()
 
     #foyer1_mean = tuple(int(mean()))
-    foyer1 = points[:f1]
+    foyer1 = points[:f]
     foyer1_mean = tuple([int(np.mean([i[0] for i in foyer1])),
                    int(np.mean([i[1] for i in foyer1]))])
 
 
     #foyer2_mean = tuple(int(mean()))
-    foyer2 = points[f2:]
+    foyer2 = points[f:]
     foyer2_mean = tuple([int(np.mean([i[0] for i in foyer2])),
                    int(np.mean([i[1] for i in foyer2]))])
 
@@ -77,26 +71,32 @@ def associate_foyer_to_points(foyer1_mean, foyer2_mean, points, copy):
     cv2.imshow("copy_points", copy_points)
     cv2.waitKey(0)
 
-
     return foyer1, foyer2
+
 
 
 def analyse_foyers(foyers, pair, copy):
 
-    points = list(set([j for i in pair for j in i]))
+    points = list(set([j for i in pair for j in i if j != (0, 0)]))
     foyer1_mean = ""
 
-    if foyers == ["ok", "far", "ok"]:
+    if foyers == ["ok", "far", "ok"] or foyers == ["far", "far", "ok"] or\
+       foyers == ["ok", "ok", "far"]:
         print("deuxieme liaison far donc foyer apres 2 eme pts")
-        foyer1_mean, foyer2_mean = build_foyer(2, 2, points, copy)
+        foyer1_mean, foyer2_mean = build_foyer(2, points, copy)
 
     elif foyers == ["far", "ok", "ok"]:
         print("premiere liaison foyer apres 1er pts")
-        foyer1_mean, foyer2_mean = build_foyer(1, 1, points, copy)
+        foyer1_mean, foyer2_mean = build_foyer(1, points, copy)
 
-    if foyers != ["ok", "ok", "ok"]:
+    elif foyers == ["ok", "far"]:
+        print("premier liaison")
+        foyer1_mean, foyer2_mean = build_foyer(1, points, copy)
+
+    if foyers != ["ok", "ok", "ok"] and foyers != ["ok", "ok"]:
         foyer1, foyer2 = associate_foyer_to_points(foyer1_mean, foyer2_mean, points, copy)
         return foyer1, foyer2, foyer1_mean, foyer2_mean
+
     else:
         return None, None, None, None
 
@@ -117,40 +117,26 @@ def determinate_foyer(last, foyer1, foyer2, foyer1_mean, foyer2_mean, finger):
     return finger
 
 
-def re_determinate_search_finger(fingers_orientation, last, finger):
 
-
-    last_thumb_position = [i[0] for i in last if i[1] == "thumb"]
-
-    fingers_orientation[0][0] = finger
-    fingers_orientation[0][1] = last_thumb_position[0][1]
-
-    return fingers_orientation
-
-
-
-def point_concentration(finger, last, copy, fingers_orientation):
+def point_concentration(finger, last, copy):
 
     print("\npoint_concentration\n")
     print(finger)
-
-
 
     pair, distance_points = recuperate_distance(finger, copy)
     foyers = analyse_distance(distance_points)
     foyer1, foyer2, foyer1_mean, foyer2_mean = analyse_foyers(foyers, pair, copy)
     if foyer1 != None:
         finger = determinate_foyer(last, foyer1, foyer2, foyer1_mean, foyer2_mean, finger)
-        fingers_orientation = re_determinate_search_finger(fingers_orientation, last,finger)
-        return finger, fingers_orientation
+        return finger
     else:
-        return None, None
+        return None
 
 
 
 
 
-#=========================================================================== delete_phax_points
+
 def delete_from_distance(sorted_fingers, crop):
 
     copy = crop.copy()
@@ -159,7 +145,10 @@ def delete_from_distance(sorted_fingers, crop):
     for nb, finger in enumerate(sorted_fingers):
 
         finger = finger[1:]
-        #print(finger)
+        lastx_sign = ""
+        lasty_sign = ""
+        lastx = 0
+        lasty = 0
 
         for point in range(len(finger) - 1):
 
@@ -169,17 +158,42 @@ def delete_from_distance(sorted_fingers, crop):
 
             cv2.circle(copy, finger[point], 2, (0, 255, 255), 2)
             cv2.circle(copy, finger[point + 1], 2, (0, 0, 255), 2)
+
             cv2.line(copy, finger[point], finger[point + 1], (0, 0, 0), 1)
 
-            if abs(distancex) >= 13 and abs(distancey) >= 11:
+            print(distancex, distancey)
+            
+            if distancex > 0 : signx = 1
+            else:              signx = 0
+            if distancey > 0 : signy = 1
+            else:              signy = 0
+
+
+            print("plus grand que 20x ", abs(distancex) >= 22)
+            print("pas meme signe x : ", lastx_sign != signx)
+
+            print("plus grand que 20y ",abs(distancey) >= 22)
+            print("pas meme signe y : ",lasty_sign != signy)
+
+            print("plus grand que 17x et y > 10 ", abs(distancex) >= 17 and abs(distancey) >= 10)
+            print("pas meme signe 25y: ", abs(distancey) >= 25)
+
+
+            if abs(distancex) >= 22 and lastx_sign != signx and lasty_sign != signy and lastx_sign != "" or\
+               abs(distancey) >= 22 and lasty_sign != signy and lasty_sign != signy and lasty_sign != "" or\
+               abs(distancex) >= 17 and abs(distancey) >= 12 or\
+               abs(distancey) >= 20 or abs(distancex) >= 30:
+
                 cv2.circle(copy, finger[point + 1], 2, (255, 255, 255), 2)
                 remove.append(finger[point + 1])
                 finger[point + 1] = finger[point]
 
-            elif abs(distancey) >= 20:
-                cv2.circle(copy, finger[point + 1], 2, (255, 255, 255), 2)
-                remove.append(finger[point + 1])
-                finger[point + 1] = finger[point]
+            else:
+
+                lastx_sign = signx
+                lasty_sign = signy
+                lastx = distancex
+                lasty = distancey
 
 
             cv2.imshow("aa", copy)
@@ -187,12 +201,13 @@ def delete_from_distance(sorted_fingers, crop):
 
         print("")
 
+
+
     return remove
 
 
 
 
-#=========================================================================== delete_phax
 
 def set_function(sorted_fingers):
     """Sometimes points have same position
@@ -211,7 +226,7 @@ def set_function(sorted_fingers):
 def printing(sorted_fingers):
     print("")
     print("DELETE PHAX \n")
-    print(sorted_fingers)
+    print("sorted fingers: ", sorted_fingers)
     print("")
 
 
@@ -260,19 +275,17 @@ def extremum(finger, copy):
 
 
 
-def delete_phax(sorted_fingers, fingers_orientation, last, crop):
+def delete_phax(sorted_fingers, last, crop):
 
     printing(sorted_fingers)
     sorted_fingers = set_function(sorted_fingers)
 
     #foyer
     for_display = sorted_fingers[0]
-    a, b = point_concentration(sorted_fingers[0], last, crop, fingers_orientation)
+    a = point_concentration(sorted_fingers[0], last, crop)
 
     if a != None:
         sorted_fingers[0] = a
-        fingers_orientation = b
-
         print("thumb points changed from : ", for_display, " to", sorted_fingers[0])
 
 
@@ -281,5 +294,5 @@ def delete_phax(sorted_fingers, fingers_orientation, last, crop):
 
     sorted_fingers[1:] = extremum(sorted_fingers[1:], crop)
 
-    return sorted_fingers, fingers_orientation
+    return sorted_fingers
 

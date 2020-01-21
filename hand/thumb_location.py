@@ -1,5 +1,5 @@
-"""Here we recuperate skeletton points. We need to identify the position of the thumb. 
-By this we can search, organise and identify the finger's and their positions.
+"""Here we recuperate skeletton points. We need to identify the position of the
+thumb. By this we can search, organise and identify the finger's and their positions.
 For that we compare fingertip coordiantes."""
 
 import cv2
@@ -10,7 +10,7 @@ def thumb_localisation(end_fingers, thumb):
     """Compare Thumb, fingers x and y position and determinate thumb position
     in function of them."""
 
-    thumbx, thumby = thumb[0], thumb[1]                                 #Thumb (x, y)
+    thumbx, thumby = thumb[-1][0], thumb[-1][1]                         #Thumb (x, y)
     dico_direction = {"left" :0, "right" :0, "top" :0, "bot" :0}
 
     for fing in end_fingers:
@@ -29,13 +29,13 @@ def thumb_localisation(end_fingers, thumb):
     return hand
 
 
-def printing(thumb, index, major, annular, auricular):
+def printing(fingers):
     """Printing for printing informations"""
-    print("HAND LOCATION")    
-    print(thumb, index, major, annular, auricular, "\n")
+    print("THUMB LOCATION")    
+    print(fingers, "\n")
 
 
-def thumb_location(thumb, index, major, annular, auricular, crop):
+def thumb_location(fingers, crop):
     """Here we need - to make a treatment of the finger's, (delete false detections)
                     - recuperate end of the fingers,
                     - verify if the thumb isn't empty,
@@ -44,36 +44,22 @@ def thumb_location(thumb, index, major, annular, auricular, crop):
     
     copy = crop.copy()
 
-    printing(thumb, index, major, annular, auricular)                               #1 - Print data finger's
+    printing(fingers)                                                               #1 - Print data finger's
 
-    fingers = [index, major, annular, auricular]                                    #2 - Recuperate fingers.
+    thumb = fingers[0]
+    fingers = fingers[1:]                                                           #2 - Recuperate fingers except thumb
 
-
-
-    removing = lambda liste, element: liste.remove(element)                         #3 - Delete False detection.
-    [removing(i, j) for i in fingers for j in i if j == ((0, 0), (0, 0))]
-
-
-
-    end_fingers = [finger[-1][1] for finger in fingers if finger != []]             #4 - recuperate fingertips
+    end_fingers = [finger[-1] for finger in fingers if finger != []]                #4 - recuperate fingertips
     [cv2.circle(copy, fingers, 2, (255, 0, 0), 2)for fingers in end_fingers]
 
 
-
-    thumb_find = len([j for i in thumb for j in i if j == (0, 0)])                  #5 - Verify thumb isn't empty
-    thumb_validation_points = len(thumb) * 2
-
-
-
-    if thumb_validation_points == thumb_find:                                       #6 - Empty thumb
+    if len(thumb) == 0:                                                             #5 - Empty thumb
         return False
 
     else:
-        thumb = [j for i in thumb for j in i if j != (0, 0)][-1]                    #7 - Recuperate last point thumb
+        hand = thumb_localisation(end_fingers, thumb)                               #6 - Thumb localisation compared fingers
 
-        hand = thumb_localisation(end_fingers, thumb)                               #8 - Thumb localisation compared fingers
-
-        cv2.circle(copy, thumb, 2, (0, 0, 255), 2)
+        cv2.circle(copy, thumb[-1], 2, (0, 0, 255), 2)
         cv2.imshow("Hand", copy)
         cv2.waitKey(0)
 
