@@ -118,7 +118,7 @@ In course = writting code
     
   - <h2> 1) thumb_location</h2>
   
- Here we recuperate skeletton points. We need to identify the position of the thumb. Indeed we can search, organise and identify the finger's and their positions.
+ Here we recuperate skeletton points. We need to identify the position of the thumb. Indeed we can search, organise and identify the finger's and their positions after the current operation.
   
    ![thumb_localisation](https://user-images.githubusercontent.com/54853371/72765060-ddee7600-3bea-11ea-9ef5-49ce65c7c178.png)
     
