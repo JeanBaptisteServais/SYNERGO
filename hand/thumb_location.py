@@ -39,36 +39,34 @@ def thumb_location(thumb, index, major, annular, auricular, crop):
 
     copy = crop.copy()
 
-    printing(thumb, index, major, annular, auricular)                                        #1 - Print data finger's
+    printing(thumb, index, major, annular, auricular)                               #1 - Print data finger's
 
-    fingers = [index, major, annular, auricular]                                             #2 - Recuperate fingers.
-
-
-
-    removing = lambda liste, element: liste.remove(element)                                  #3 - Delete False detection.
-    [removing(i, j) for i in fingers
-                    for j in i if j == ((0, 0), (0, 0))]
+    fingers = [index, major, annular, auricular]                                    #2 - Recuperate fingers.
 
 
 
-    end_fingers = [finger[-1][1] for finger in fingers if finger != []]                      #4 - recuperate fingertips
-    [cv2.circle(copy, fingers, 2, (255, 0, 0), 2)
-     for fingers in end_fingers]
+    removing = lambda liste, element: liste.remove(element)                         #3 - Delete False detection.
+    [removing(i, j) for i in fingers for j in i if j == ((0, 0), (0, 0))]
 
 
 
-    thumb_find = len([j for i in thumb for j in i if j == (0, 0)])                           #5 - Verify thumb isn't empty
+    end_fingers = [finger[-1][1] for finger in fingers if finger != []]             #4 - recuperate fingertips
+    [cv2.circle(copy, fingers, 2, (255, 0, 0), 2)for fingers in end_fingers]
+
+
+
+    thumb_find = len([j for i in thumb for j in i if j == (0, 0)])                  #5 - Verify thumb isn't empty
     thumb_validation_points = len(thumb) * 2
 
 
 
-    if thumb_validation_points == thumb_find:                                               #6 - Empty thumb
+    if thumb_validation_points == thumb_find:                                       #6 - Empty thumb
         return False
 
     else:
-        thumb = [j for i in thumb for j in i if j != (0, 0)][-1]                            #7 - Recuperate last point thumb
+        thumb = [j for i in thumb for j in i if j != (0, 0)][-1]                    #7 - Recuperate last point thumb
 
-        hand = thumb_localisation(end_fingers, thumb)                                       #8 - Thumb localisation compared fingers
+        hand = thumb_localisation(end_fingers, thumb)                               #8 - Thumb localisation compared fingers
 
         cv2.circle(copy, thumb, 2, (0, 0, 255), 2)
         cv2.imshow("Hand", copy)
