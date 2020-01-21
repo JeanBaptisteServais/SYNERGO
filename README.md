@@ -118,7 +118,7 @@ In course = writting code
     
   - <h2> 1) thumb_location</h2>
   
- Here we recuperate skeletton points. We need to identify the position of the thumb because... we activilly search an utilisation of that.
+ Here we recuperate skeletton points. We need to identify the position of the thumb because... we activilly search.
   
    ![thumb_localisation](https://user-images.githubusercontent.com/54853371/72765060-ddee7600-3bea-11ea-9ef5-49ce65c7c178.png)
     
