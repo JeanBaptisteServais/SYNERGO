@@ -1,5 +1,5 @@
-"""Here we recuperate skeletton points. We need to identify the position of the
-thumb. By this we can search, organise and identify the finger's and their positions.
+"""Here we recuperate skeletton points. We need to identify the position of the thumb. 
+By this we can search, organise and identify the finger's and their positions.
 For that we compare fingertip coordiantes."""
 
 import cv2
@@ -36,7 +36,12 @@ def printing(thumb, index, major, annular, auricular):
 
 
 def thumb_location(thumb, index, major, annular, auricular, crop):
+    """Here we need - to make a treatment of the finger's, (delete false detections)
+                    - recuperate end of the fingers,
+                    - verify if the thumb isn't empty,
+                    - localise thumb in compared fingers"""
 
+    
     copy = crop.copy()
 
     printing(thumb, index, major, annular, auricular)                               #1 - Print data finger's
