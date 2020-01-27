@@ -6,7 +6,7 @@ import numpy as np
 def to_removing_finger(to_remove, sorted_fingers):
     
     if len(to_remove) > 0:
-        print("element a supprimer :", to_remove)
+        #print("element a supprimer :", to_remove)
 
         elements_finger = []
 
@@ -18,16 +18,16 @@ def to_removing_finger(to_remove, sorted_fingers):
                 if i == j:
                     sorted_fingers.remove(j)
 
-    print(sorted_fingers)
-    print("")
+    #print(sorted_fingers)
+    #print("")
 
     return sorted_fingers
 
 
 def delete_finger(sorted_fingers, crop):
 
-    print("DELETE FINGER")
-    print(sorted_fingers, "\n")
+    #print("DELETE FINGER")
+    #print(sorted_fingers, "\n")
     to_remove = []
 
     for i in range(len(sorted_fingers)):
@@ -38,8 +38,8 @@ def delete_finger(sorted_fingers, crop):
         if i < len(sorted_fingers) - 1:
 
             #Draw
-            [cv2.circle(copy_delete, j, 2, (255, 0, 0), 2) for j in sorted_fingers[i]]
-            [cv2.circle(copy_delete, j, 2, (0, 0, 255), 2) for j in sorted_fingers[i + 1]]
+            #[cv2.circle(copy_delete, j, 2, (255, 0, 0), 2) for j in sorted_fingers[i]]
+            #[cv2.circle(copy_delete, j, 2, (0, 0, 255), 2) for j in sorted_fingers[i + 1]]
 
 
             #Distance
@@ -54,18 +54,18 @@ def delete_finger(sorted_fingers, crop):
             length1 = len(sorted_fingers[i])
             length2 = len(sorted_fingers[i + 1])
 
-            print("correspondance : ", same_points_localisation, " / total pts: ", length1 * length2)
+            #print("correspondance : ", same_points_localisation, " / total pts: ", length1 * length2)
 
 
             if same_points_localisation >= (int(length1 * length2) / 2) - 2 and length1 * length2 > 0 and\
                same_points_localisation > 0:
                 to_remove.append(i + 1)
                 [cv2.circle(copy_delete, j, 2, (0, 0, 0), 2) for j in sorted_fingers[i + 1]]
-                print("finger removed")
+                #print("finger removed")
 
-            cv2.imshow("copy_delete", copy_delete)
-            cv2.waitKey(0)
-            print("")
+            #cv2.imshow("copy_delete", copy_delete)
+            #cv2.waitKey(0)
+            #print("")
 
 
     sorted_fingers = to_removing_finger(to_remove, sorted_fingers)

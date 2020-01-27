@@ -16,8 +16,8 @@ def treat_area_palm(hand_localised, palm, palm_center, copy):
         cv2.circle(copy, palm_center, 2, (255, 255, 255), 1)
         [cv2.circle(copy, pts, 2, (0, 0, 0), 1) for pts in palm]
 
-        cv2.imshow("palm", copy)
-        cv2.waitKey(0)
+        #cv2.imshow("palm", copy)
+        #cv2.waitKey(0)
 
 
 def printing(fingers):
@@ -28,7 +28,7 @@ def palm_analyse(hand_localised, palm_center, palm, rectangle, crop,
                  fingers):
 
     copy = crop.copy()
-    printing(fingers)
+    #printing(fingers)
 
     treat_area_palm(hand_localised, palm, palm_center, copy)
 

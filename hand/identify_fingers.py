@@ -28,11 +28,15 @@ def thumb_to_next_finger(fingers, thumb, finger_annotation,
 
     #Identify distance beetween first and thumb point
     thumb_index = dist.euclidean(fingers[0], thumb[-1])
-    print(thumb_index, (rectangle_w, rectangle_h))
+    #print(thumb_index, (rectangle_w, rectangle_h))
 
+    if len(fingers) == 4:
+        fingers_identify.append((fingers[0], finger_annotation[0]))
+        draw_line_pts(copy, finger_annotation[0], thumb[-1], fingers[0])
+        [REMOVING(finger_annotation) for iteration in range(1)]
 
     #Index
-    if area_for_ratio == "width" and thumb_index < rectangle_w * 0.574 or\
+    elif area_for_ratio == "width" and thumb_index < rectangle_w * 0.574 or\
        area_for_ratio == "height" and thumb_index < rectangle_h * 0.607:
         fingers_identify.append((fingers[0], finger_annotation[0]))
         draw_line_pts(copy, finger_annotation[0], thumb[-1], fingers[0])
@@ -58,8 +62,8 @@ def thumb_to_next_finger(fingers, thumb, finger_annotation,
         [REMOVING(finger_annotation) for iteration in range(1)]
 
 
-    cv2.imshow("thumb_next_finger", copy)
-    cv2.waitKey(0)
+    #cv2.imshow("thumb_next_finger", copy)
+    #cv2.waitKey(0)
       
 
     return fingers_identify
@@ -115,8 +119,8 @@ def fingers_distance(distance, rectangle_w, rectangle_h, area_for_ratio,
         fingersX.append((fingers[i + 1], finger_annotation[0]))
         [REMOVING(finger_annotation) for iteration in range(1)]
 
-    cv2.imshow("thumb_next_finger", copy)
-    cv2.waitKey(0)
+    #cv2.imshow("thumb_next_finger", copy)
+    #cv2.waitKey(0)
     print("")
 
 
@@ -249,9 +253,9 @@ def identify_fingers(thumb, fingers, crop, rectangle):
     #Only have Thumb finger
     elif fingers.count(()) == len(fingers) and thumb != ():
         draw_line_pts(copy, "P", thumb[-1], thumb[-1])
-        cv2.imshow("only thumb", copy)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+        #cv2.imshow("only thumb", copy)
+        #cv2.waitKey(0)
+        #cv2.destroyAllWindows()
 
 
     else:

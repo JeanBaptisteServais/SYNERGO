@@ -20,12 +20,12 @@ def analyse_distance(distance_points):
     foyers = []
 
     for distance in distance_points:
-        print(distance)
+
         if distance > 30:    foyers.append("far")
         elif distance < 30 : foyers.append("ok")
 
-    print("\n", foyers)
     return foyers
+
 
 def build_foyer(f, points, copy):
 
@@ -45,8 +45,8 @@ def build_foyer(f, points, copy):
     cv2.circle(copy_foyer, foyer1[0], 20, (0, 0, 255), 2)
     cv2.circle(copy_foyer, foyer2[0], 20, (0, 0, 255), 2)
 
-    cv2.imshow("copy_foyer", copy_foyer)
-    cv2.waitKey(0)
+    #cv2.imshow("copy_foyer", copy_foyer)
+    #cv2.waitKey(0)
 
     return foyer1_mean, foyer2_mean
 
@@ -68,8 +68,8 @@ def associate_foyer_to_points(foyer1_mean, foyer2_mean, points, copy):
     [cv2.circle(copy_points, i, 2, (0, 0, 255), 2) for i in foyer1]
     [cv2.circle(copy_points, i, 2, (255, 0, 0), 2) for i in foyer2]
     
-    cv2.imshow("copy_points", copy_points)
-    cv2.waitKey(0)
+    #cv2.imshow("copy_points", copy_points)
+    #cv2.waitKey(0)
 
     return foyer1, foyer2
 
@@ -120,8 +120,8 @@ def determinate_foyer(last, foyer1, foyer2, foyer1_mean, foyer2_mean, finger):
 
 def point_concentration(finger, last, copy):
 
-    print("\npoint_concentration\n")
-    print(finger)
+    #print("\npoint_concentration\n")
+    #print(finger)
 
     pair, distance_points = recuperate_distance(finger, copy)
     foyers = analyse_distance(distance_points)
@@ -154,29 +154,25 @@ def delete_from_distance(sorted_fingers, crop):
 
             distancex = finger[point][0] - finger[point + 1][0]
             distancey = finger[point][1] - finger[point + 1][1]
-            #print(  abs(distancex), abs(distancey)    )
 
-            cv2.circle(copy, finger[point], 2, (0, 255, 255), 2)
-            cv2.circle(copy, finger[point + 1], 2, (0, 0, 255), 2)
+            #cv2.circle(copy, finger[point], 2, (0, 255, 255), 2)
+            #cv2.circle(copy, finger[point + 1], 2, (0, 0, 255), 2)
+            #cv2.line(copy, finger[point], finger[point + 1], (0, 0, 0), 1)
 
-            cv2.line(copy, finger[point], finger[point + 1], (0, 0, 0), 1)
-
-            print(distancex, distancey)
-            
             if distancex > 0 : signx = 1
             else:              signx = 0
             if distancey > 0 : signy = 1
             else:              signy = 0
 
 
-            print("plus grand que 20x ", abs(distancex) >= 22)
-            print("pas meme signe x : ", lastx_sign != signx)
-
-            print("plus grand que 20y ",abs(distancey) >= 22)
-            print("pas meme signe y : ",lasty_sign != signy)
-
-            print("plus grand que 17x et y > 10 ", abs(distancex) >= 17 and abs(distancey) >= 10)
-            print("pas meme signe 25y: ", abs(distancey) >= 25)
+##            print("plus grand que 20x ", abs(distancex) >= 22)
+##            print("pas meme signe x : ", lastx_sign != signx)
+##
+##            print("plus grand que 20y ",abs(distancey) >= 22)
+##            print("pas meme signe y : ",lasty_sign != signy)
+##
+##            print("plus grand que 17x et y > 10 ", abs(distancex) >= 17 and abs(distancey) >= 10)
+##            print("pas meme signe 25y: ", abs(distancey) >= 25)
 
 
             if abs(distancex) >= 22 and lastx_sign != signx and lasty_sign != signy and lastx_sign != "" or\
@@ -184,10 +180,10 @@ def delete_from_distance(sorted_fingers, crop):
                abs(distancex) >= 17 and abs(distancey) >= 12 or\
                abs(distancey) >= 20 or abs(distancex) >= 30:
 
-                cv2.circle(copy, finger[point + 1], 2, (255, 255, 255), 2)
+                #cv2.circle(copy, finger[point + 1], 2, (255, 255, 255), 2)
                 #remove.append(finger[point + 1])
                 #ICI FAIRE SELON LE RATIO
-                print("ratioooooooooooooooooooooooooooooooooooooooooooooooooo")
+
                 finger[point + 1] = finger[point]
 
             else:
@@ -198,11 +194,8 @@ def delete_from_distance(sorted_fingers, crop):
                 lasty = distancey
 
 
-            cv2.imshow("aa", copy)
-            cv2.waitKey(0)
-
-        print("")
-
+            #cv2.imshow("aa", copy)
+            #cv2.waitKey(0)
 
 
     return remove
@@ -254,7 +247,7 @@ def extremum(finger, copy):
 
             if first_second_points > 40 and len(i) == 2:
                 print("second point to far")
-                cv2.circle(copy, i[1], 2, (0, 0, 255), 2)
+                #cv2.circle(copy, i[1], 2, (0, 0, 255), 2)
                 to_remove.append(i[1])
 
             elif first_second_points > 40 and len(i) > 2:
@@ -263,7 +256,7 @@ def extremum(finger, copy):
                 second_third_points = dist.euclidean(i[1], i[2])
                 if second_third_points < 20:
                     print("second and third close so first to far")
-                    cv2.circle(copy, i[0], 2, (0, 0, 255), 2)
+                    #cv2.circle(copy, i[0], 2, (0, 0, 255), 2)
                     to_remove.append(i[0])
 
     for i in to_remove:
@@ -279,7 +272,7 @@ def extremum(finger, copy):
 
 def delete_phax(sorted_fingers, last, crop):
 
-    printing(sorted_fingers)
+    #printing(sorted_fingers)
     sorted_fingers = set_function(sorted_fingers)
 
     #foyer
@@ -288,7 +281,7 @@ def delete_phax(sorted_fingers, last, crop):
 
     if a != None:
         sorted_fingers[0] = a
-        print("thumb points changed from : ", for_display, " to", sorted_fingers[0])
+        #print("thumb points changed from : ", for_display, " to", sorted_fingers[0])
 
 
     remove = delete_from_distance(sorted_fingers, crop)

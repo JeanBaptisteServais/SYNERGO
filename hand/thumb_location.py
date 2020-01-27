@@ -44,13 +44,13 @@ def thumb_location(fingers, crop):
     
     copy = crop.copy()
 
-    printing(fingers)                                                               #1 - Print data finger's
+    #printing(fingers)                                                               #1 - Print data finger's
 
     thumb = fingers[0]
     fingers = fingers[1:]                                                           #2 - Recuperate fingers except thumb
 
     end_fingers = [finger[-1] for finger in fingers if finger != []]                #4 - recuperate fingertips
-    [cv2.circle(copy, fingers, 2, (255, 0, 0), 2)for fingers in end_fingers]
+    #[cv2.circle(copy, fingers, 2, (255, 0, 0), 2)for fingers in end_fingers]
 
 
     if len(thumb) == 0:                                                             #5 - Empty thumb
@@ -59,10 +59,10 @@ def thumb_location(fingers, crop):
     else:
         hand = thumb_localisation(end_fingers, thumb)                               #6 - Thumb localisation compared fingers
 
-        cv2.circle(copy, thumb[-1], 2, (0, 0, 255), 2)
-        cv2.imshow("Hand", copy)
-        cv2.waitKey(0)
+        #cv2.circle(copy, thumb[-1], 2, (0, 0, 255), 2)
+        #cv2.imshow("Hand", copy)
+        #cv2.waitKey(0)
 
-        print(hand, "\n")
+        #print(hand, "\n")
 
         return hand
