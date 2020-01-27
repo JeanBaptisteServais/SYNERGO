@@ -165,7 +165,7 @@ def distance_thumb_fingers(points, thumb):
 
 def distance_resorted_beetween_fingers(current_fingers, fingers, all_finger):
 
-    distance_to_sort = sorted([dist.euclidean(current_fingers, i) for i in fingers])
+    distance_to_sort = sorted([dist.euclidean(current_fingers, i) for i in fingers if i != ()])
     reorganisation = []
     reorganisation += [fing for sort in distance_to_sort for fing in fingers if fing != ()
                         and dist.euclidean(current_fingers, fing) == sort]
@@ -185,16 +185,16 @@ def appropriate_finger_to_his_points(fingers, original_fingers):
     it to a finger"""
 
     return [(j, i[1]) for i in fingers
-            for j in original_fingers if i[0] == j[-1] and j != None] + [fingers[0]]
+            for j in original_fingers if j != None and i[0] == j[-1]] + [fingers[0]]
     
 
 
 
 
-FINGER_ANNOTATION = ["I", "M", "An", "a"]
+
 def identify_fingers(thumb, fingers, crop, rectangle):
 
-    global FINGER_ANNOTATION
+    FINGER_ANNOTATION = ["I", "M", "An", "a"]
 
     original_fingers = fingers
     copy = crop.copy()
@@ -251,6 +251,7 @@ def identify_fingers(thumb, fingers, crop, rectangle):
         draw_line_pts(copy, "P", thumb[-1], thumb[-1])
         cv2.imshow("only thumb", copy)
         cv2.waitKey(0)
+        cv2.destroyAllWindows()
 
 
     else:

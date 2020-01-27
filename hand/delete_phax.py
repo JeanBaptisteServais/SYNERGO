@@ -6,7 +6,7 @@ from scipy.spatial import distance as dist
 def recuperate_distance(finger, copy):
     """Recuperate distance from pair and pairs"""
 
-    distance = [[dist.euclidean(finger[i], finger[i + 1])                       #Recuperate distance
+    distance = [(dist.euclidean(finger[i], finger[i + 1]) )                     #Recuperate distance
                 for i in range(len(finger)) if i < len(finger) - 1]             #of pair
 
     pair = [(finger[i], finger[i + 1]) for i in range(len(finger))              #Recuperate pairs
@@ -185,7 +185,9 @@ def delete_from_distance(sorted_fingers, crop):
                abs(distancey) >= 20 or abs(distancex) >= 30:
 
                 cv2.circle(copy, finger[point + 1], 2, (255, 255, 255), 2)
-                remove.append(finger[point + 1])
+                #remove.append(finger[point + 1])
+                #ICI FAIRE SELON LE RATIO
+                print("ratioooooooooooooooooooooooooooooooooooooooooooooooooo")
                 finger[point + 1] = finger[point]
 
             else:
