@@ -1,6 +1,6 @@
 # SYNERGO (In course)
 
-<h1>on the second branch we tried to reconstruct points and a king of put put points (in course)</h1>
+<h1>on the second branch we tried to reconstruct points and a kind of put put points (in course)</h1>
 
 
 <strong>care not working, need to put it into file, and to put video_treatment for have dimensions</strong>
