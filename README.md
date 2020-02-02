@@ -1,6 +1,6 @@
 # SYNERGO (In course)
 
-<h3>https://github.com/JeanBaptisteServais/try-rebuilt-Hand-skeletton compose here</h3>
+<h3>https://github.com/JeanBaptisteServais/try-rebuilt-Hand-skeletton compose here</h3> (like a paper's composed by wood, paper's in agregation by color)
 
 
 <strong>care not working, need to put it into file, and to put video_treatment for have dimensions</strong>
