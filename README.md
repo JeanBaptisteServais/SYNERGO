@@ -62,11 +62,6 @@ modele physique de donnée
 
 
 
-
-Finish = Doc and verify to apply
-
-In course = writting code
-
 <h1>Head</h1>
 
 <details>
