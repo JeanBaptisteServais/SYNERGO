@@ -80,28 +80,41 @@ In course = writting code
 
 <h1>Head</h1>
 
+<details>
+
   Finish
 
   Requirements: (pip install -r requirements_head.txt)
 
+</details>
+
 <h1>Eyes</h1>
+  
+ <details>
   
   Finish
   Requirements: (pip install -r requirements_eyes.txt)
   
+ </details>
   
 <h1>Face</h1>
 
+<details>
+  
   Finish
   Requirements: (pip install -r requirements_face.txt)
-  
+
+</details>
   
 <h1>Exterior Head</h1>
 
+<details>
+
+</details>
 
 <h1>Hand</h1>
 
-    
+<details>
 
   - <h2>Hand detection</h2>
   
@@ -191,8 +204,12 @@ t = thumb; i = index; m = major; w, h = width, height of the contour; F = finger
 
 </p>
 
+</details>
+
 
   - <h1>Fingers</h1>
+  
+ <details>
   
   - <h2>defintion_to_angle</h2>
       <em>In course</em>
@@ -222,12 +239,20 @@ t = thumb; i = index; m = major; w, h = width, height of the contour; F = finger
 
   to download :
 
-
+</details>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <h1>Talk</h1>
 
+<details>
+</details>
+
 <h1>Voice</h1>
 
+<details>
+</details>
+
 <h1>Secret algo</h1>
+<details>
+</details>
