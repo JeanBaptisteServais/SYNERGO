@@ -191,7 +191,7 @@ t = thumb; i = index; m = major; w, h = width, height of the contour; F = finger
 </details>
 
 
-  - <h1>Fingers</h1>
+  <h1>Fingers</h1>
   
  <details>
   
