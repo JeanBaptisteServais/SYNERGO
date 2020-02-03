@@ -34,7 +34,7 @@ Web site application
 
 <details>
 
-<h1>Head</h1>
+<h2>Head</h2>
 
 <details>
 
@@ -44,7 +44,7 @@ Web site application
 
 </details>
 
-<h1>Eyes</h1>
+<h2>Eyes</h2>
   
  <details>
   
@@ -53,7 +53,7 @@ Web site application
   
  </details>
   
-<h1>Face</h1>
+<h2>Face</h2>
 
 <details>
   
@@ -62,13 +62,13 @@ Web site application
 
 </details>
   
-<h1>Exterior Head</h1>
+<h2>Exterior Head</h2>
 
 <details>
 
 </details>
 
-<h1>Hand</h1>
+<h2>Hand</h2>
 
 <details>
 
