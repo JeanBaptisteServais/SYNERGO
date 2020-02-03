@@ -34,7 +34,9 @@ Web site application
  
  Register
  
- Upload vide
+ Upload video
+ 
+ Social media publications
   
 </details>
 
