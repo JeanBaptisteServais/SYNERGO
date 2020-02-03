@@ -1,19 +1,8 @@
 # SYNERGO (In course)
 
-<h3>https://github.com/JeanBaptisteServais/try-rebuilt-Hand-skeletton compose here</h3> (like a paper's composed by wood, paper's in agregation by color)
+In course
 
-
-
-
-<strong>web site for behavior video analysis</strong> , we are curently writting the code for hand detection. The part of the web site, our speciality and the UML analysis's progress. The current code is not finish. We writting it on an another branch (another github)
-
-<strong>In this web site i can: </strong> create my account, have acces to video analysis, make an analysis of my video (download it, wait 1-2 hours) and watch it ! Save my video, publish it on social media ...
-
-<strong>In this web site i can: </strong> read the blog with jb approach (part for explain the code if we want)
-
-<strong>Later: Mobile :</strong> register in real time video with my smarthphone, download it and have acces to the analysis (1-2 hours later).
-
-<h1>What's utilisation of the project ??????</h1>
+https://github.com/JeanBaptisteServais/try-rebuilt-Hand-skeletton (actual) + web site
 
 
 <h1>Web Site Part</h1>
