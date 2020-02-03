@@ -63,17 +63,6 @@ modele physique de donnée
 
 
 
-
-
-
-
-
-
-
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
 Finish = Doc and verify to apply
 
 In course = writting code
