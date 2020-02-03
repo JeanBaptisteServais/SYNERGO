@@ -9,7 +9,7 @@ https://github.com/JeanBaptisteServais/try-rebuilt-Hand-skeletton (actual) + web
 
 https://synergo2.herokuapp.com/ In progress
 
-Documentation
+<h2>Documentation</h2>
 
 <details>
   
@@ -17,7 +17,7 @@ Documentation
 
 </details>
 
-Web site application
+<h2>Web site application</h2>
 
 <details>
  
@@ -27,10 +27,11 @@ Web site application
  
  Social media publications
   
+  
 </details>
 
 
-<h1>Backend</h1>
+<h1>How detections works</h1>
 
 <details>
 
