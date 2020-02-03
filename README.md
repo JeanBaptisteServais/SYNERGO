@@ -225,7 +225,7 @@ t = thumb; i = index; m = major; w, h = width, height of the contour; F = finger
 
 </details>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 <h1>Talk</h1>
 
