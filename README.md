@@ -3,7 +3,7 @@
 <h3>https://github.com/JeanBaptisteServais/try-rebuilt-Hand-skeletton compose here</h3> (like a paper's composed by wood, paper's in agregation by color)
 
 
-<strong>care not working, need to put it into file, and to put video_treatment for have dimensions</strong>
+
 
 <strong>web site for behavior video analysis</strong> , we are curently writting the code for hand detection. The part of the web site, our speciality and the UML analysis's progress. The current code is not finish. We writting it on an another branch (another github)
 
@@ -16,14 +16,12 @@
 <h1>What's utilisation of the project ??????</h1>
 
 
-
-![aa](https://user-images.githubusercontent.com/54853371/71028191-20fd8b00-210d-11ea-90fd-2ef5c299e2af.png)
-
 <h1>Web Site Part</h1>
 
 https://synergo2.herokuapp.com/ In progress
 
-
+<details>
+  
 domaine fonctionelle
 
 package
@@ -52,13 +50,15 @@ deploiement composant
 
 <h4>video part</h4>
 
+
+
 ![DIAGRAMME DE CLASSE TRUK SYNERGO 18 janvier](https://user-images.githubusercontent.com/54853371/72666930-e1310880-3a16-11ea-9966-915c4b2376c2.png)
 
 
 
 modele physique de donnée
 
-
+</details>
 
 
 
