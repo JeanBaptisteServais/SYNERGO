@@ -20,10 +20,22 @@
 
 https://synergo2.herokuapp.com/ In progress
 
+Documentation
+
 <details>
   
 ![DIAGRAMME DE CLASSE TRUK SYNERGO 18 janvier](https://user-images.githubusercontent.com/54853371/72666930-e1310880-3a16-11ea-9966-915c4b2376c2.png)
 
+</details>
+
+Web site application
+
+<details>
+ 
+ Register
+ 
+ Upload vide
+  
 </details>
 
 
