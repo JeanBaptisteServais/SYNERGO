@@ -2,7 +2,7 @@
 
 In course
 
-We are here: https://github.com/JeanBaptisteServais/COMPUTER-VISION---Hand-skeletton
+We are here: https://github.com/JeanBaptisteServais/COMPUTER-VISION---Hand-skeletton <br>
 and here : https://github.com/JeanBaptisteServais/SYNERGO_part_site/blob/master/README.md
 
 #---------------------------------------------------
