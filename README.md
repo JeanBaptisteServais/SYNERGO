@@ -9,7 +9,7 @@ https://github.com/JeanBaptisteServais/try-rebuilt-Hand-skeletton (actual) + web
 
 https://github.com/JeanBaptisteServais/SYNERGO_part_site/blob/master/README.md <- SITE WEB PARTTT
 
-https://synergo2.herokuapp.com/ (care we don't push all time)
+https://synergo2.herokuapp.com/ (care we don't push all time last push yesterday)
 
 <h2>Documentation</h2>
 
