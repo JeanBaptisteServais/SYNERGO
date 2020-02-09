@@ -1,5 +1,11 @@
 # SYNERGO (In course)
 
+In course
+
+We are here: https://github.com/JeanBaptisteServais/COMPUTER-VISION---Hand-skeletton
+and here : https://github.com/JeanBaptisteServais/SYNERGO_part_site/blob/master/README.md
+
+#---------------------------------------------------
 
 <h1>Web Site Part</h1>
 
