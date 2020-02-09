@@ -1,9 +1,5 @@
 # SYNERGO (In course)
 
-In course
-
-https://github.com/JeanBaptisteServais/try-rebuilt-Hand-skeletton (actual) + web site
-
 
 <h1>Web Site Part</h1>
 
