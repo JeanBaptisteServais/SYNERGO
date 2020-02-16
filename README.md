@@ -39,7 +39,7 @@ https://synergo2.herokuapp.com/ (care we don't push all time last push yesterday
 
 <h1>How detections works</h1>
 
-<details>
+
 
 <h2>Eyes</h2>
   
@@ -49,6 +49,9 @@ https://synergo2.herokuapp.com/ (care we don't push all time last push yesterday
   
  </details>
   
+  
+  
+<details>
 
 <h2>Head</h2>
 
