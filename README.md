@@ -25,21 +25,7 @@ https://synergo2.herokuapp.com/ (care we don't push all time last push yesterday
 
 <h2>Web site application</h2>
 
-<details>
- 
- Register
- 
- Upload video
- 
- Social media publications
-  
-  
-</details>
-
-
-<h1>How detections works</h1>
-
-
+<details> Register <br> Upload video <br> Social media publications </details>
 
 <h2>Eyes</h2>  <details>here : https://github.com/JeanBaptisteServais/test-eyes-trackers </details>
   
