@@ -55,8 +55,7 @@ https://synergo2.herokuapp.com/ (care we don't push all time last push yesterday
   
  <details>
   
-  Finish
-  Requirements: (pip install -r requirements_eyes.txt)
+  here : https://github.com/JeanBaptisteServais/test-eyes-trackers
   
  </details>
   
