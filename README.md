@@ -11,7 +11,7 @@ and here : https://github.com/JeanBaptisteServais/SYNERGO_part_site/blob/master/
 
 https://github.com/JeanBaptisteServais/SYNERGO_part_site/blob/master/README.md <- SITE WEB PARTTT
 
-https://synergo2.herokuapp.com/ (care we don't push all time last push yesterday)
+https://synergo2.herokuapp.com/ (care we don't push all time)
 
 <h2>Documentation</h2>
 
