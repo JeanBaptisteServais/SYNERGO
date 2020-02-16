@@ -41,13 +41,9 @@ https://synergo2.herokuapp.com/ (care we don't push all time last push yesterday
 
 
 
-<h2>Eyes</h2>
+<h2>Eyes</h2>  <details>here : https://github.com/JeanBaptisteServais/test-eyes-trackers </details>
   
- <details>
-  
-  here : https://github.com/JeanBaptisteServais/test-eyes-trackers
-  
- </details>
+
   
   
   
